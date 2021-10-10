@@ -13,4 +13,4 @@ Extracts a value from the PseudoQueue, using a first-in, first-out approach.
 
 WhiteBoard process:
 
-![challenge11](/Challenge11.jpg)
+![challenge11](./Challenge11.jpg)
