@@ -66,9 +66,25 @@ public class App {
     public static void pseudoQueue(){
 
         PseudoQueue trials =new PseudoQueue();
-        trials.enqueue("7");
-        trials.enqueue("8");
-        trials.enqueue("9");
-        System.out.println(trials.toString());
+        trials.enqueue("A");
+        trials.enqueue("B");
+        trials.enqueue("C");
+        trials.enqueue("D");
+        System.out.println( trials);
+        System.out.println(trials.dequeue());
+        System.out.println(trials.dequeue());
+        System.out.println(trials.dequeue());
+        System.out.println(trials.dequeue());
+        System.out.println(trials.dequeue());
+        System.out.println(trials.dequeue());
+//        trials.enqueue("Happy");
+//        trials.enqueue("Path");
+        trials.enqueue("11");
+        trials.enqueue("6");
+        trials.enqueue("2017");
+
+        System.out.println(trials);
+
+
     }
 }
