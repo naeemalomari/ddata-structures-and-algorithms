@@ -20,7 +20,14 @@ public class PseudoQueue {
                 stack2.push(stack1.pop());
             }
         }
-        return stack2.pop();
+        String value = stack2.pop();
+        if (stack1.top == null) {
+            while (stack2.top != null) {
+                stack1.push(stack2.pop());
+            }
+        }
+        return value;
+
     }
 
     @Override
