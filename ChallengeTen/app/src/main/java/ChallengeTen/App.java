@@ -10,6 +10,11 @@ public class App {
 
     public static void main(String[] args) {
 
+        stackReturns();
+        queueReturns();
+
+    }
+    public static void stackReturns() {
         Stack stack = new Stack();
 
         stack.push("A");
@@ -27,6 +32,8 @@ public class App {
         System.out.println(stack.pop());
         System.out.println(stack.pop());
 
+    }
+    public static void queueReturns(){
         System.out.println("=========================================");
 
         Queue queue = new Queue();
@@ -52,6 +59,9 @@ public class App {
         System.out.println(queue.dequeue());
         System.out.println(queue.dequeue());
         System.out.println(queue.dequeue());
+
+    }
+    public static void pseudoQueue(){
 
     }
 }
