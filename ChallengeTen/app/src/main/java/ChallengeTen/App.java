@@ -4,14 +4,16 @@
 package ChallengeTen;
 
 import ChallengeTen.queue.structure.Queue;
+import ChallengeTen.stack.PseudoQueue;
 import ChallengeTen.stack.structure.Stack;
 
 public class App {
 
     public static void main(String[] args) {
 
-        stackReturns();
-        queueReturns();
+//        stackReturns();
+//        queueReturns();
+        pseudoQueue();
 
     }
     public static void stackReturns() {
@@ -63,5 +65,10 @@ public class App {
     }
     public static void pseudoQueue(){
 
+        PseudoQueue trials =new PseudoQueue();
+        trials.enqueue("7");
+        trials.enqueue("8");
+        trials.enqueue("9");
+        System.out.println(trials.toString());
     }
 }

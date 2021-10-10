@@ -6,9 +6,7 @@ public class PseudoQueue {
     Stack stack1 = new Stack();
     Stack stack2 = new Stack();
 
-    public PseudoQueue(Stack stack1, Stack stack2) {
-        this.stack1 = stack1;
-        this.stack2 = stack2;
+    public PseudoQueue() {
     }
 
 
@@ -23,7 +21,7 @@ public class PseudoQueue {
             }
         }return stack2.pop();
     }
-    
+
     @Override
     public String toString() {
         if (stack1.top == null)
