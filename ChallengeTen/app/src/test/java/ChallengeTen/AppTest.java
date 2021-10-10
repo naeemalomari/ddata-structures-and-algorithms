@@ -131,14 +131,6 @@ class AppTest {
         assertEquals("stack1=Stack{top=StackNode{data='Path', next=StackNode{data='Happy', next=null}}}", trials.toString());
     }
 
-//    @Test
-//    public void PseudoQueueFailure() {
-//        PseudoQueue trials = new PseudoQueue();
-//        trials.enqueue("Happy");
-//        trials.enqueue("Path");
-//
-//    }
-
     @Test
     public void dequeueTest(){
         PseudoQueue trails = new PseudoQueue();
