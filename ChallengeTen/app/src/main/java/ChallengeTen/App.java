@@ -70,19 +70,11 @@ public class App {
         trials.enqueue("B");
         trials.enqueue("C");
         trials.enqueue("D");
-
         System.out.println(trials.dequeue());
         System.out.println(trials.dequeue());
-//        System.out.println(trials.dequeue());
-//        System.out.println(trials.dequeue());
-//        System.out.println(trials.dequeue());
-//        System.out.println(trials.dequeue());
-//        System.out.println(trials.dequeue());
-
         System.out.println(trials);
         trials.enqueue("SSS");
         trials.enqueue("DDD");
-//        trials.enqueue("VVV");
         System.out.println(trials);
         System.out.println(trials.dequeue());
         System.out.println(trials);
