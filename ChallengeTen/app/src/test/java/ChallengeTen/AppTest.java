@@ -4,13 +4,22 @@
 package ChallengeTen;
 
 import ChallengeTen.queue.structure.Queue;
+import ChallengeTen.stack.PseudoQueue;
 import ChallengeTen.stack.structure.Stack;
+
+
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
+
+    /**
+     * Code Challenge 10 TEST
+     */
+
     @Test
-    public void pushToStackTest(){
+    public void pushToStackTest() {
         Stack stackTest = new Stack();
 
         stackTest.push("M");
@@ -22,7 +31,7 @@ class AppTest {
     }
 
     @Test
-    public void popStackTest(){
+    public void popStackTest() {
         Stack stackTest = new Stack();
 
         stackTest.push("M");
@@ -35,7 +44,7 @@ class AppTest {
     }
 
     @Test
-    public void emptyStackTest(){
+    public void emptyStackTest() {
         Stack stackTest = new Stack();
 
         stackTest.push("M");
@@ -49,7 +58,7 @@ class AppTest {
     }
 
     @Test
-    public void peekStackTest(){
+    public void peekStackTest() {
         Stack stackTest = new Stack();
 
         stackTest.push("M");
@@ -63,7 +72,7 @@ class AppTest {
     }
 
     @Test
-    public void enqueueToQueueTest(){
+    public void enqueueToQueueTest() {
         Queue queueTest = new Queue();
 
         queueTest.enqueue("M");
@@ -74,7 +83,7 @@ class AppTest {
     }
 
     @Test
-    public void dequeueFromQueueTest(){
+    public void dequeueFromQueueTest() {
         Queue queueTest = new Queue();
 
         queueTest.enqueue("M");
@@ -86,7 +95,7 @@ class AppTest {
     }
 
     @Test
-    public void emptyQueueTest(){
+    public void emptyQueueTest() {
         Queue queueTest = new Queue();
 
         queueTest.enqueue("M");
@@ -100,16 +109,41 @@ class AppTest {
     }
 
     @Test
-    public void peekQueueTest(){
+    public void peekQueueTest() {
         Queue queueTest = new Queue();
 
         queueTest.enqueue("M");
         queueTest.enqueue("O");
         queueTest.enqueue("H");
 
-        assertEquals("M",queueTest.peek());
+        assertEquals("M", queueTest.peek());
 
         queueTest.dequeue();
-        assertEquals("O",queueTest.peek());
+        assertEquals("O", queueTest.peek());
     }
+
+    @Test
+    public void PseudoQueueHappy() {
+        PseudoQueue trials = new PseudoQueue();
+        trials.enqueue("Happy");
+        trials.enqueue("Path");
+
+        assertEquals("stack1=Stack{top=StackNode{data='Path', next=StackNode{data='Happy', next=null}}}", trials.toString());
+    }
+
+    @Test
+    public void dequeueTest(){
+        PseudoQueue trails = new PseudoQueue();
+        trails.enqueue("11");
+        trails.enqueue("6");
+        trails.enqueue("2017");
+        assertEquals("stack1=Stack{top=StackNode{data='2017', next=StackNode{data='6', next=StackNode{data='11', next=null}}}}",trails.toString());
+        trails.dequeue();
+        trails.dequeue();
+        trails.dequeue();
+        trails.dequeue();
+        assertEquals("stack1=Stack{top=null}",trails.toString());
+        assertEquals("Empty", trails.dequeue());
+    }
+
 }

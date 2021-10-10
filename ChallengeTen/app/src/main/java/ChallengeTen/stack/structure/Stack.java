@@ -3,7 +3,7 @@ package ChallengeTen.stack.structure;
 import ChallengeTen.stack.data.StackNode;
 
 public class Stack {
-    private StackNode top;
+    public StackNode top;
 
     public Stack() {
 
