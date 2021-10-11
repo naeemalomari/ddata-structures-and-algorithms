@@ -11,9 +11,9 @@ public class App {
 
     public static void main(String[] args) {
 
-//        stackReturns();
-//        queueReturns();
-//        pseudoQueue();
+        stackReturns();
+        queueReturns();
+        pseudoQueue();
         AnimalShelter animalShelter =new AnimalShelter();
         Animal dog =new Dog();
         animalShelter.enqueue(dog);

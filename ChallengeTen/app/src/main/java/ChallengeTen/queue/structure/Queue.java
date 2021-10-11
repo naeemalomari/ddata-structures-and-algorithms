@@ -60,6 +60,4 @@ public class Queue {
                 ", rear=" + rear +
                 '}';
     }
-
-
 }

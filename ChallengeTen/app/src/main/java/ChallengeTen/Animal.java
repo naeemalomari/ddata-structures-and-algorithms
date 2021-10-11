@@ -8,11 +8,11 @@ public class Animal {
     }
 
     public Animal() {
+    }
 
-    }
-    public String getType() {
-        return type;
-    }
+    public String getType(){  return type; }
+      
+
 
     public void setType(String type) {
         this.type = type;
