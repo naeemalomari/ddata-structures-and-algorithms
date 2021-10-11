@@ -12,9 +12,7 @@ If pref is not "dog" or "cat" then return null.
 Approach & Efficiency 
 
 Enqueue is O(1), by enqueue to Dog or Cat immediately.
-
-Dequeue is O(1), by dequeue Dog or
-Cat immediately or return null. Solution To run it you need to Enqueue(value) or Dequeue. 
+Dequeue is O(1), by dequeue Dog or Cat immediately or return null.
 
 
 WhiteBoard process:
