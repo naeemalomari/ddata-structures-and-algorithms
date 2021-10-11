@@ -19,6 +19,7 @@ public class App {
         animalShelter.enqueue(dog);
 //        animalShelter.enqueue(dog);
 //        animalShelter.enqueue(dog);
+//        animalShelter.enqueue(dog);
         Animal cat=new Cat();
 //        animalShelter.enqueue(cat);
 //        animalShelter.enqueue(cat);

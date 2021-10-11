@@ -7,4 +7,6 @@ public class Dog extends Animal{
         super();
         setType("dog");
     }
+
+
 }
