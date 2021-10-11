@@ -175,5 +175,5 @@ class AppTest {
         System.out.println(animalShelter.dequeue("dog"));
         assertEquals("Queue{front=QueueNode{data='cat', next=null}, rear=QueueNode{data='cat', next=null}}<--FirstQueue--SecondQueue-->Queue{front=null, rear=null}", animalShelter.toString());
     }
-    
+
 }
