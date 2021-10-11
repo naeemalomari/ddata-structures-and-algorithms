@@ -145,5 +145,35 @@ class AppTest {
         assertEquals("stack1=Stack{top=null}",trails.toString());
         assertEquals("Empty", trails.dequeue());
     }
+    @Test
+    public void dequeueTest12() {
+        AnimalShelter animalShelter =new AnimalShelter();
+        Animal dog =new Dog();
+        animalShelter.enqueue(dog);
+        Animal cat=new Cat();
+        animalShelter.enqueue(cat);
+        System.out.println(animalShelter.dequeue("dog"));
+        assertEquals("Queue{front=QueueNode{data='cat', next=null}, rear=QueueNode{data='cat', next=null}}<--FirstQueue--SecondQueue-->Queue{front=null, rear=QueueNode{data='dog', next=null}}", animalShelter.toString());
+    }
+    @Test
+    public void dequeueTest12B() {
+        AnimalShelter animalShelter =new AnimalShelter();
+        Animal dog =new Dog();
+//        animalShelter.enqueue(dog);
+        Animal cat=new Cat();
+//        animalShelter.enqueue(cat);
+        System.out.println(animalShelter.dequeue("dog"));
+        assertEquals("Queue{front=null, rear=null}<--FirstQueue--SecondQueue-->Queue{front=null, rear=null}", animalShelter.toString());
+    }
+    @Test
+    public void dequeueTest12C() {
+        AnimalShelter animalShelter =new AnimalShelter();
+        Animal dog =new Dog();
+//        animalShelter.enqueue(dog);
+        Animal cat=new Cat();
+        animalShelter.enqueue(cat);
+        System.out.println(animalShelter.dequeue("dog"));
+        assertEquals("Queue{front=QueueNode{data='cat', next=null}, rear=QueueNode{data='cat', next=null}}<--FirstQueue--SecondQueue-->Queue{front=null, rear=null}", animalShelter.toString());
+    }
 
 }

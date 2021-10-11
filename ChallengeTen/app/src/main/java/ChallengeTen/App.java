@@ -10,11 +10,25 @@ import ChallengeTen.stack.structure.Stack;
 public class App {
 
     public static void main(String[] args) {
-
+//
 //        stackReturns();
 //        queueReturns();
-        pseudoQueue();
-
+//        pseudoQueue();
+        AnimalShelter animalShelter =new AnimalShelter();
+        Animal dog =new Dog();
+        animalShelter.enqueue(dog);
+//        animalShelter.enqueue(dog);
+//        animalShelter.enqueue(dog);
+//        animalShelter.enqueue(dog);
+        Animal cat=new Cat();
+//        animalShelter.enqueue(cat);
+//        animalShelter.enqueue(cat);
+//        animalShelter.enqueue(dog);
+        animalShelter.enqueue(cat);
+        System.out.println(animalShelter.dequeue("cat"));
+        System.out.println(animalShelter);
+        System.out.println(animalShelter.dequeue("dog"));
+        System.out.println(animalShelter);
     }
     public static void stackReturns() {
         Stack stack = new Stack();

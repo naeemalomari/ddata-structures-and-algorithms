@@ -45,6 +45,14 @@ public class Queue {
         return front == null;
     }
 
+    public QueueNode getFront() {
+        return front;
+    }
+
+    public QueueNode getRear() {
+        return rear;
+    }
+
     @Override
     public String toString() {
         return "Queue{" +
