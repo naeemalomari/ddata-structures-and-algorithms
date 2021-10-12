@@ -175,5 +175,27 @@ class AppTest {
         System.out.println(animalShelter.dequeue("dog"));
         assertEquals("Queue{front=QueueNode{data='cat', next=null}, rear=QueueNode{data='cat', next=null}}<--FirstQueue--SecondQueue-->Queue{front=null, rear=null}", animalShelter.toString());
     }
+    @Test
+    public void validateBrackets() {
+        StackAndQueue stackAndQueue =new StackAndQueue();
+
+//        stackAndQueue.validateBrackets("{{{}}}");
+        assertTrue(stackAndQueue.validateBrackets("{{{}}}"));
+    }
+    @Test
+    public void validateBracketsA() {
+        StackAndQueue stackAndQueue =new StackAndQueue();
+
+//        stackAndQueue.validateBrackets("{{{}}}");
+        assertFalse(stackAndQueue.validateBrackets("{{{}}"));
+    }
+    @Test
+    public void validateBracketsB() {
+        StackAndQueue stackAndQueue =new StackAndQueue();
+
+//        stackAndQueue.validateBrackets("{{{}}}");
+        assertTrue(stackAndQueue.validateBrackets(""));
+    }
+
 
 }
