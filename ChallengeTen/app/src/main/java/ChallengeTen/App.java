@@ -33,6 +33,7 @@ public class App {
         StackAndQueue stackAndQueue =new StackAndQueue();
         System.out.println(stackAndQueue.validateBrackets("{{{mynameisnaeem}}}"));
         System.out.println(stackAndQueue.validateBrackets("{{{mynameisnaeem}"));
+        System.out.println(stackAndQueue.validateBrackets("{()}"));
 
     }
     public static void stackReturns() {
