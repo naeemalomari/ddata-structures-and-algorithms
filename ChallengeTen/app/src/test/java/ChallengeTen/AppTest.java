@@ -196,6 +196,4 @@ class AppTest {
 //        stackAndQueue.validateBrackets("{{{}}}");
         assertTrue(stackAndQueue.validateBrackets(""));
     }
-
-
 }
