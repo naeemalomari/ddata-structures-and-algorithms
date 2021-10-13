@@ -112,4 +112,26 @@ public class App {
         System.out.println(trials.dequeue());
         System.out.println(trials);
     }
+
+    ///////////////////////CHALLENGE14B//////////////////////////////////
+//    public static String DuckDuckGoose(int k, String... string) {
+//
+//
+//        GenericQueue<String> queue = new GenericQueue<>();
+//
+//        for (String s : string) {
+//            queue.enQueue(s);
+//        }
+//
+//        while (queue.getFront().getNext() != null) {
+//            for (int i = 1; i < k; i++) {
+//                queue.enQueue(queue.deQueue(null));
+//            }
+//            queue.deQueue(null);
+//        }
+//
+//        return queue.peek();
+//
+//
+//    }
 }
