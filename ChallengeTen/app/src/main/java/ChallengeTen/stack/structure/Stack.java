@@ -46,6 +46,22 @@ public class Stack {
         return top == null;
     }
 
+    public Integer getMax(){
+        if(top == null) return 0;
+
+        int value =0;
+        while( top != null ){
+
+            if(Integer.parseInt(top.getData()) >  value ){
+                value=Integer.parseInt(top.getData());
+
+
+            }
+            this.pop();
+        }
+        return value;
+    }
+
     @Override
     public String toString() {
         return "Stack{" +

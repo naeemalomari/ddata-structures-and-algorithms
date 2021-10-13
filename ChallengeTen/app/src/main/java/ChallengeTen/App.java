@@ -29,11 +29,24 @@ public class App {
 //        System.out.println(animalShelter);
 //        System.out.println(animalShelter.dequeue("dog"));
 //        System.out.println(animalShelter);
+//
+//        StackAndQueue stackAndQueue =new StackAndQueue();
+//        System.out.println(stackAndQueue.validateBrackets("{{{mynameisnaeem}}}"));
+//        System.out.println(stackAndQueue.validateBrackets("{{{mynameisnaeem}"));
+//        System.out.println(stackAndQueue.validateBrackets("{()}"));
+//
 
-        StackAndQueue stackAndQueue =new StackAndQueue();
-        System.out.println(stackAndQueue.validateBrackets("{{{mynameisnaeem}}}"));
-        System.out.println(stackAndQueue.validateBrackets("{{{mynameisnaeem}"));
-        System.out.println(stackAndQueue.validateBrackets("{()}"));
+        Stack stack1=new Stack();
+        stack1.push("5");
+        stack1.push("2");
+        stack1.push("3");
+        stack1.push("4");
+        stack1.push("1");
+
+        System.out.println(stack1.getMax());
+
+
+
 
     }
     public static void stackReturns() {
