@@ -1,19 +1,14 @@
-Challenge 12 Summary: 
-Dog & Cat classes extends Animal class.
-AnimalShelter Class holds only dogs and cats. 
+Challenge Summary
+Function Called validateBrackets, that take string and return boolean.
 
-The shelter operates using Queue. The 2Methods Inside AnimalShelter Class :
-enqueue Arguments: animal, and animal can be either a dog or a cat object dequeue Arguments: pref, and pref can be
-either "dog" or "cat". 
-Return: either a dog or a cat, based on preference.
-If pref is not "dog" or "cat" then return null. 
+So it checks for the 3 types of brackets, and return true if the brackets in the string are balanced or false if they are not.
 
+Approach & Efficiency
 
-Approach & Efficiency 
+Big O time -> O(n) because we are looping inside the string character by character.
 
-Enqueue is O(1), by enqueue to Dog or Cat immediately.
-Dequeue is O(1), by dequeue Dog or Cat immediately or return null.
+Big O space -> O(n) because the method is taking a String.
 
 
 WhiteBoard process:
-![challenge11](./Challenge12.jpg)
+![challenge11](./Challenge13.jpg)

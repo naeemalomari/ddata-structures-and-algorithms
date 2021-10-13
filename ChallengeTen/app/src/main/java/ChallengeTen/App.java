@@ -10,25 +10,31 @@ import ChallengeTen.stack.structure.Stack;
 public class App {
 
     public static void main(String[] args) {
-//
-//        stackReturns();
-//        queueReturns();
-//        pseudoQueue();
-        AnimalShelter animalShelter =new AnimalShelter();
-        Animal dog =new Dog();
-        animalShelter.enqueue(dog);
+////
+////        stackReturns();
+////        queueReturns();
+////        pseudoQueue();
+//        AnimalShelter animalShelter =new AnimalShelter();
+//        Animal dog =new Dog();
 //        animalShelter.enqueue(dog);
-//        animalShelter.enqueue(dog);
-//        animalShelter.enqueue(dog);
-        Animal cat=new Cat();
+////        animalShelter.enqueue(dog);
+////        animalShelter.enqueue(dog);
+////        animalShelter.enqueue(dog);
+//        Animal cat=new Cat();
+////        animalShelter.enqueue(cat);
+////        animalShelter.enqueue(cat);
+////        animalShelter.enqueue(dog);
 //        animalShelter.enqueue(cat);
-//        animalShelter.enqueue(cat);
-//        animalShelter.enqueue(dog);
-        animalShelter.enqueue(cat);
-        System.out.println(animalShelter.dequeue("cat"));
-        System.out.println(animalShelter);
-        System.out.println(animalShelter.dequeue("dog"));
-        System.out.println(animalShelter);
+//        System.out.println(animalShelter.dequeue("cat"));
+//        System.out.println(animalShelter);
+//        System.out.println(animalShelter.dequeue("dog"));
+//        System.out.println(animalShelter);
+
+        StackAndQueue stackAndQueue =new StackAndQueue();
+        System.out.println(stackAndQueue.validateBrackets("{{{mynameisnaeem}}}"));
+        System.out.println(stackAndQueue.validateBrackets("{{{mynameisnaeem}"));
+        System.out.println(stackAndQueue.validateBrackets("{()}"));
+
     }
     public static void stackReturns() {
         Stack stack = new Stack();
