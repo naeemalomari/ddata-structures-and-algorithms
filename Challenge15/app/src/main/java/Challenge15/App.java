@@ -5,33 +5,7 @@ package Challenge15;
 
 public class App {
     public static void main(String[] args) {
-        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
-//        binarySearchTree.insert(50);
-//        binarySearchTree.insert(10);
-//        binarySearchTree.insert(60);
-//        binarySearchTree.insert(5);
-//        binarySearchTree.insert(20);
-//        binarySearchTree.insert(55);
-//        binarySearchTree.insert(70);
-//
-//        binarySearchTree.inorderTraversal();
-//
-//        BinarySearchTree<String> naim = new BinarySearchTree<>();
-//        naim.insert("N");
-//        naim.insert("A");
-//        naim.insert("E");
-//        naim.insert("E");
-//        naim.insert("M");
-//        naim.insert("A");
-//        naim.insert("L");
-//        naim.insert("O");
-//        naim.insert("M");
-//        naim.insert("R");
-//        naim.insert("I");
-//
-////            System.out.println("Inorder traversal of Naim");
-//        naim.inorderTraversal();
-//
+
 
         BinarySearchTree<Integer> binarySearchContains = new BinarySearchTree<>();
         binarySearchContains.insert(23);
@@ -42,9 +16,13 @@ public class App {
         binarySearchContains.insert(27);
         binarySearchContains.insert(85);
 
+
         binarySearchContains.inorderTraversal();
+        System.out.println("");
         binarySearchContains.orderPost();
+        System.out.println("");
         binarySearchContains.preOder200();
+        System.out.println("");
         System.out.println(binarySearchContains.contains(7));
 
 

@@ -8,16 +8,10 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
     private BinaryNode<T> root;
     List<Integer> postOrderList = new ArrayList<>();
-    List<Integer> preOrderList = new ArrayList<>(); // FOR TEST
+    List<Integer> preOrderList = new ArrayList<>();
 
-    public void insert(T data) {
-        if (isEmpty()) { // tree empty
-            root = new BinaryNode<>(data);
-        } else {
-            insertHelper(data, root);
-        }
-    }
 
+/////////////////////////////////INORDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     public void inorderTraversal() {
         if (isEmpty()) {
             return;
@@ -30,15 +24,22 @@ public class BinarySearchTree<T extends Comparable<T>> {
         if (root.getLeftNode() != null) {
             traverseInorder(root.getLeftNode());
         }
+
         System.out.print(root.getData() + " -> ");
 
         if (root.getRightNode() != null) {
             traverseInorder(root.getRightNode());
         }
+
     }
-
-
-
+    /////////////////////////////////////////////////////////////////INSERT///////////////////////////////////////
+    public void insert(T data) {
+        if (isEmpty()) { // tree empty
+            root = new BinaryNode<>(data);
+        } else {
+            insertHelper(data, root);
+        }
+    }
     private void insertHelper(T data, BinaryNode<T> root) {
         BinaryNode<T> binaryNode = new BinaryNode<>(data);
         if (data.compareTo(root.getData()) < 0) {
@@ -55,7 +56,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
             }
         }
     }
-
+///////////////////////////////////////////////CONTAINS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
     public boolean contains(T data){
         while (root != null) {
@@ -68,7 +69,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
         return false;
     }
-
+////////////////////////////////////////////////////postOrder\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     public void orderPost() {
         if (isEmpty()) {
             return;
@@ -76,8 +77,6 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
         postOrder(root);
     }
-
-
     public void postOrder( BinaryNode<T>  root){
 
         if(root == null){
@@ -85,10 +84,10 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
         postOrder(root.getLeftNode());
         postOrder(root.getRightNode());
-        System.out.print(root.getData() + " ");
+        System.out.print(root.getData() + " -> ");
         postOrderList.add((Integer) root.getData());
     }
-
+//////////////////////////////////////////////////////////////PRE--ORDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     public void preOder200() {
         if (isEmpty()) {
             return;
@@ -102,13 +101,15 @@ public class BinarySearchTree<T extends Comparable<T>> {
             return;
         }
 
-        System.out.print(root.getData() + " ");
+        System.out.print(root.getData() + " -> ");
         preOrderList.add((Integer) root.getData());
 
         preOrder(root.getLeftNode());
 
         preOrder(root.getRightNode());
     }
+
+    ////////////////////////////////////////////////////////////////////////////
     public boolean isEmpty() {
         return root == null;
     }
