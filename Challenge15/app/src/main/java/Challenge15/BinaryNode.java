@@ -1,5 +1,8 @@
 package Challenge15;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BinaryNode<T> {
     private T data;
 
@@ -9,6 +12,7 @@ public class BinaryNode<T> {
     public BinaryNode(T data) {
         this.data = data;
     }
+
 
     public T getData() {
         return data;

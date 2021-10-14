@@ -5,29 +5,48 @@ package Challenge15;
 
 public class App {
     public static void main(String[] args) {
-            BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
-            binarySearchTree.insert(50);
-            binarySearchTree.insert(10);
-            binarySearchTree.insert(60);
-            binarySearchTree.insert(5);
-            binarySearchTree.insert(20);
-            binarySearchTree.insert(55);
-            binarySearchTree.insert(70);
+        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+//        binarySearchTree.insert(50);
+//        binarySearchTree.insert(10);
+//        binarySearchTree.insert(60);
+//        binarySearchTree.insert(5);
+//        binarySearchTree.insert(20);
+//        binarySearchTree.insert(55);
+//        binarySearchTree.insert(70);
+//
+//        binarySearchTree.inorderTraversal();
+//
+//        BinarySearchTree<String> naim = new BinarySearchTree<>();
+//        naim.insert("N");
+//        naim.insert("A");
+//        naim.insert("E");
+//        naim.insert("E");
+//        naim.insert("M");
+//        naim.insert("A");
+//        naim.insert("L");
+//        naim.insert("O");
+//        naim.insert("M");
+//        naim.insert("R");
+//        naim.insert("I");
+//
+////            System.out.println("Inorder traversal of Naim");
+//        naim.inorderTraversal();
+//
 
-            BinarySearchTree<String> jason = new BinarySearchTree<>();
-            jason.insert("N");
-            jason.insert("A");
-            jason.insert("E");
-            jason.insert("E");
-            jason.insert("M");
-            jason.insert("A");
-            jason.insert("L");
-            jason.insert("O");
-            jason.insert("M");
-            jason.insert("R");
-            jason.insert("I");
+        BinarySearchTree<Integer> binarySearchContains = new BinarySearchTree<>();
+        binarySearchContains.insert(23);
+        binarySearchContains.insert(8);
+        binarySearchContains.insert(42);
+        binarySearchContains.insert(4);
+        binarySearchContains.insert(16);
+        binarySearchContains.insert(27);
+        binarySearchContains.insert(85);
 
-//            System.out.println("Inorder traversal of Naim");
-            jason.inorderTraversal();
-        }
+//        System.out.println(binarySearchContains.contains(7));
+//        binarySearchContains.inorderTraversal();
+//        binarySearchContains.orderPost();
+        binarySearchContains.preOder();
+
+
     }
+}
