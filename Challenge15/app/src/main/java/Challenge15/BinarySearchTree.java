@@ -59,11 +59,13 @@ public class BinarySearchTree<T extends Comparable<T>> {
 ///////////////////////////////////////////////CONTAINS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
     public boolean contains(T data){
-        while (root != null) {
-            if(data.compareTo(root.getData()) > 0)
-                root = root.getRightNode();
-            else if (data.compareTo(root.getData()) < 0)
-                root = root.getLeftNode();
+        BinaryNode<T> binaryNode1 = root;
+
+        while (binaryNode1 != null) {
+            if(data.compareTo(binaryNode1.getData()) > 0)
+                binaryNode1 = binaryNode1.getRightNode();
+            else if (data.compareTo(binaryNode1.getData()) < 0)
+                binaryNode1 = binaryNode1.getLeftNode();
             else
                 return true;
         }

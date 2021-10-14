@@ -16,6 +16,8 @@ public class App {
         binarySearchContains.insert(27);
         binarySearchContains.insert(85);
 
+        System.out.println(binarySearchContains.contains(100));
+//        System.out.println(binarySearchContains);
 
         binarySearchContains.inorderTraversal();
         System.out.println("");
@@ -23,8 +25,7 @@ public class App {
         System.out.println("");
         binarySearchContains.preOder200();
         System.out.println("");
-        System.out.println(binarySearchContains.contains(7));
 
-
+        System.out.println(binarySearchContains.contains(700));
     }
 }
