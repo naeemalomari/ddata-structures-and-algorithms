@@ -42,10 +42,10 @@ public class App {
         binarySearchContains.insert(27);
         binarySearchContains.insert(85);
 
-//        System.out.println(binarySearchContains.contains(7));
-//        binarySearchContains.inorderTraversal();
-//        binarySearchContains.orderPost();
-        binarySearchContains.preOder();
+        binarySearchContains.inorderTraversal();
+        binarySearchContains.orderPost();
+        binarySearchContains.preOder200();
+        System.out.println(binarySearchContains.contains(7));
 
 
     }

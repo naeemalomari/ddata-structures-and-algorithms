@@ -27,14 +27,12 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     private void traverseInorder(BinaryNode<T> root) {
-        if (root.getLeftNode() != null) { // traverse left
+        if (root.getLeftNode() != null) {
             traverseInorder(root.getLeftNode());
         }
-
-        // visit / print the root of the tree (root could be a sub-tree)
         System.out.print(root.getData() + " -> ");
 
-        if (root.getRightNode() != null) { // traverse right
+        if (root.getRightNode() != null) {
             traverseInorder(root.getRightNode());
         }
     }
@@ -91,7 +89,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
         postOrderList.add((Integer) root.getData());
     }
 
-    public void preOder() {
+    public void preOder200() {
         if (isEmpty()) {
             return;
         }
@@ -114,4 +112,14 @@ public class BinarySearchTree<T extends Comparable<T>> {
     public boolean isEmpty() {
         return root == null;
     }
+
+    @Override
+    public String toString() {
+        return "BinarySearchTree{" +
+                "root=" + root +
+                ", postOrderList=" + postOrderList +
+                ", preOrderList=" + preOrderList +
+                '}';
+    }
+
 }
