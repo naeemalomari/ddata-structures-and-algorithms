@@ -42,8 +42,8 @@ public class BinaryNode<T> {
     public String toString() {
         return "BinaryNode{" +
                 "data=" + data +
-                ", leftNode=" + leftNode +
-                ", rightNode=" + rightNode +
+                ", left=" + leftNode +
+                ", right=" + rightNode +
                 '}';
     }
 }

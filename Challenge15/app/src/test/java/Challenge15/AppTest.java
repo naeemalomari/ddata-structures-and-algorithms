@@ -14,7 +14,7 @@ class AppTest {
     public void emptyTreeTest() {
         BinarySearchTree<Integer> binaryTreeTest = new BinarySearchTree<>();
 
-        assertEquals("BinarySearchTree{root=null, postOrderList=[], preOrderList=[]}", binaryTreeTest.toString());
+        assertEquals("BinarySearchTree{root=null}", binaryTreeTest.toString());
     }
 
     @Test
@@ -22,7 +22,7 @@ class AppTest {
         BinarySearchTree<Integer> binaryTreeTest = new BinarySearchTree<>();
         binaryTreeTest.insert(7);
 
-        assertEquals("BinarySearchTree{root=BinaryNode{data=7, leftNode=null, rightNode=null}, postOrderList=[], preOrderList=[]}", binaryTreeTest.toString());
+        assertEquals("BinarySearchTree{root=BinaryNode{data=7, left=null, right=null}}", binaryTreeTest.toString());
     }
 
     @Test
@@ -30,9 +30,9 @@ class AppTest {
         BinarySearchTree<Integer> binaryTreeTest = new BinarySearchTree<>();
         binaryTreeTest.insert(7);
         binaryTreeTest.insert(9);
-        binaryTreeTest.insert(10);
+        binaryTreeTest.insert(5);
 
-        assertEquals("BinarySearchTree{root=BinaryNode{data=7, leftNode=null, rightNode=BinaryNode{data=9, leftNode=null, rightNode=BinaryNode{data=10, leftNode=null, rightNode=null}}}, postOrderList=[], preOrderList=[]}", binaryTreeTest.toString());
+        assertEquals("BinarySearchTree{root=BinaryNode{data=7, left=BinaryNode{data=5, left=null, right=null}, right=BinaryNode{data=9, left=null, right=null}}}", binaryTreeTest.toString());
 
     }
 
@@ -44,7 +44,7 @@ class AppTest {
         binaryTreeTest.insert(9);
         binaryTreeTest.insert(10);
         binaryTreeTest.preOder200();
-        assertEquals("BinarySearchTree{root=BinaryNode{data=7, leftNode=null, rightNode=BinaryNode{data=9, leftNode=null, rightNode=BinaryNode{data=10, leftNode=null, rightNode=null}}}, postOrderList=[], preOrderList=[7, 9, 10]}", binaryTreeTest.toString());
+        assertEquals("BinarySearchTree{root=BinaryNode{data=7, left=null, right=BinaryNode{data=9, left=null, right=BinaryNode{data=10, left=null, right=null}}}}", binaryTreeTest.toString());
 
     }
 
@@ -56,7 +56,7 @@ class AppTest {
         binaryTreeTest.insert(10);
         binaryTreeTest.inorderTraversal();
 
-        assertEquals("BinarySearchTree{root=BinaryNode{data=7, leftNode=null, rightNode=BinaryNode{data=9, leftNode=null, rightNode=BinaryNode{data=10, leftNode=null, rightNode=null}}}, postOrderList=[], preOrderList=[]}", binaryTreeTest.toString());
+        assertEquals("BinarySearchTree{root=BinaryNode{data=7, left=null, right=BinaryNode{data=9, left=null, right=BinaryNode{data=10, left=null, right=null}}}}", binaryTreeTest.toString());
 
     }
 
@@ -73,8 +73,8 @@ class AppTest {
         binaryTreeTest.insert(42);
         binaryTreeTest.insert(75);
         binaryTreeTest.insert(10);
-        binaryTreeTest.preOder200();
-        assertEquals("BinarySearchTree{root=BinaryNode{data=12, leftNode=BinaryNode{data=11, leftNode=BinaryNode{data=7, leftNode=null, rightNode=BinaryNode{data=9, leftNode=null, rightNode=BinaryNode{data=10, leftNode=null, rightNode=null}}}, rightNode=null}, rightNode=BinaryNode{data=15, leftNode=null, rightNode=BinaryNode{data=42, leftNode=null, rightNode=BinaryNode{data=75, leftNode=null, rightNode=null}}}}, postOrderList=[], preOrderList=[]}", binaryTreeTest.toString());
+        binaryTreeTest.orderPost();
+        assertEquals("BinarySearchTree{root=BinaryNode{data=12, left=BinaryNode{data=11, left=BinaryNode{data=7, left=null, right=BinaryNode{data=9, left=null, right=BinaryNode{data=10, left=null, right=null}}}, right=null}, right=BinaryNode{data=15, left=null, right=BinaryNode{data=42, left=null, right=BinaryNode{data=75, left=null, right=null}}}}}", binaryTreeTest.toString());
 
     }
 

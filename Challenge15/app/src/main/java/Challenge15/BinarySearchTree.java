@@ -116,10 +116,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     @Override
     public String toString() {
         return "BinarySearchTree{" +
-                "root=" + root +
-                ", postOrderList=" + postOrderList +
-                ", preOrderList=" + preOrderList +
-                '}';
+                "root=" + root +'}';
     }
 
 }
