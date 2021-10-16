@@ -4,11 +4,10 @@ package Challenge15;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinarySearchTree<T extends Comparable<T>> {
+public class BinarySearchTree<T extends Comparable<T>> implements Comparable<BinarySearchTree<T>> {
 
     private BinaryNode<T> root;
-    List<Integer> postOrderList = new ArrayList<>();
-    List<Integer> preOrderList = new ArrayList<>();
+
 
 
 /////////////////////////////////INORDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -87,7 +86,6 @@ public class BinarySearchTree<T extends Comparable<T>> {
         postOrder(root.getLeftNode());
         postOrder(root.getRightNode());
         System.out.print(root.getData() + " -> ");
-        postOrderList.add((Integer) root.getData());
     }
 //////////////////////////////////////////////////////////////PRE--ORDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     public void preOder200() {
@@ -104,7 +102,6 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
 
         System.out.print(root.getData() + " -> ");
-        preOrderList.add((Integer) root.getData());
 
         preOrder(root.getLeftNode());
 
@@ -122,4 +119,12 @@ public class BinarySearchTree<T extends Comparable<T>> {
                 "root=" + root +'}';
     }
 
+    public BinaryNode<T> getRoot() {
+        return root;
+    }
+
+    @Override
+    public int compareTo(BinarySearchTree<T> o) {
+        return Integer.compare(root.getData().compareTo(o.getRoot().getData()), 0);
+    }
 }

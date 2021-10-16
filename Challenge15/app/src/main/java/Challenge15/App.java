@@ -3,6 +3,8 @@
  */
 package Challenge15;
 
+import org.w3c.dom.Node;
+
 public class App {
     public static void main(String[] args) {
 
@@ -26,6 +28,14 @@ public class App {
         binarySearchContains.preOder200();
         System.out.println("");
 
-        System.out.println(binarySearchContains.contains(700));
+        System.out.println(binarySearchContains.contains(23));
+
+        BinarySearchTree<Integer> binarySearchTree2 = new BinarySearchTree<>();
+
+        binarySearchTree2.insert(5); // Change this number to compare between the two trees .
+
+        System.out.println(binarySearchTree2.compareTo(binarySearchContains));
+        System.out.println(binarySearchContains.compareTo(binarySearchTree2));
+        System.out.println(binarySearchTree2.compareTo(binarySearchContains));
     }
 }
