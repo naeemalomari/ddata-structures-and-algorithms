@@ -10,9 +10,9 @@ public class App {
 
 
         BinarySearchTree<Integer> binarySearchContains = new BinarySearchTree<>();
-        binarySearchContains.insert(23);
+        binarySearchContains.insert(20);
         binarySearchContains.insert(8);
-        binarySearchContains.insert(42);
+        binarySearchContains.insert(100);
         binarySearchContains.insert(4);
         binarySearchContains.insert(16);
         binarySearchContains.insert(27);
@@ -37,5 +37,16 @@ public class App {
         System.out.println(binarySearchTree2.compareTo(binarySearchContains));
         System.out.println(binarySearchContains.compareTo(binarySearchTree2));
         System.out.println(binarySearchTree2.compareTo(binarySearchContains));
+
+
+        BinarySearchTree<Integer> binarySearchTreeMax=new BinarySearchTree<>();
+        binarySearchTreeMax.insert(20);
+        binarySearchTreeMax.insert(8);
+        binarySearchTreeMax.insert(100);
+        binarySearchTreeMax.insert(4);
+        binarySearchTreeMax.insert(16);
+        binarySearchTreeMax.insert(270);
+        binarySearchTreeMax.insert(85);
+        System.out.println(binarySearchTreeMax.maxNumberInTree());
     }
 }
