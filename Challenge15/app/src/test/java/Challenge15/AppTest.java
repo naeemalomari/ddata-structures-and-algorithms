@@ -78,4 +78,40 @@ class AppTest {
 
     }
 
+    @Test
+    public void maxNumberTest(){
+        BinarySearchTree<Integer> binarySearchTreeTest = new BinarySearchTree<>();
+
+
+        binarySearchTreeTest.insert(15);
+        binarySearchTreeTest.insert(11);
+        binarySearchTreeTest.insert(7);
+        binarySearchTreeTest.insert(9);
+        binarySearchTreeTest.insert(10);
+        binarySearchTreeTest.insert(42);
+        binarySearchTreeTest.insert(75);
+        binarySearchTreeTest.insert(10);
+
+        binarySearchTreeTest.maxNumberInTree();
+        assertEquals(75, binarySearchTreeTest.maxNumberInTree());
+    }
+
+    @Test
+    public void maxNumberTest2(){
+        BinarySearchTree<Integer> binarySearchTreeTest = new BinarySearchTree<>();
+
+//
+//        binarySearchTreeTest.insert(15);
+//        binarySearchTreeTest.insert(11);
+//        binarySearchTreeTest.insert(7);
+//        binarySearchTreeTest.insert(9);
+//        binarySearchTreeTest.insert(10);
+//        binarySearchTreeTest.insert(42);
+//        binarySearchTreeTest.insert(75);
+//        binarySearchTreeTest.insert(10);
+        // when the tree is empty.
+        binarySearchTreeTest.maxNumberInTree();
+        assertEquals(0, binarySearchTreeTest.maxNumberInTree());
+    }
+
 }
