@@ -9,7 +9,9 @@ Data structure which have three concept pre-order, in-order and post order.
 -Create a binary tree with the three definitions pre-order, in-order and post order.
 -Create a Binary Search Tree class with add method, and Contains method to know it specific String or integer is exits in the tree or not.
 
+## White Board
 
+![challenge11](./Challenge16.jpg)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
