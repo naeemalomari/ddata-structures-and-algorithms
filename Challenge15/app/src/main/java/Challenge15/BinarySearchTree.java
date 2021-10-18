@@ -1,11 +1,16 @@
 package Challenge15;
 
 
+import com.sun.source.tree.BinaryTree;
+import org.w3c.dom.Node;
+
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinarySearchTree<T extends Comparable<T>> implements Comparable<BinarySearchTree<T>> {
 
-    private BinaryNode<T> root;
+    BinaryNode<T> root;
 
 
     /////////////////////////////////INORDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -146,6 +151,31 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         }
         return result;
     }
+
+    public ArrayList<T> levelOrder(BinarySearchTree<T> binaryNode) {
+
+        if (root == null) {
+            return null;
+        }
+        ArrayList<T> list = new ArrayList<>();
+        Queue<BinaryNode<T>> teeQueue = new LinkedList<>();
+        BinaryNode<T> newNode = root;
+        teeQueue.add(root);
+        while (!teeQueue.isEmpty()) {
+            //dequeue
+            BinaryNode<T> node = teeQueue.remove();
+            list.add(node.getData());
+            if (node.getLeftNode() != null) {
+                teeQueue.add(node.getLeftNode());
+            }
+            if (node.getRightNode() != null) {
+                teeQueue.add(node.getRightNode());
+
+            }
+        }
+        return list;
+    }
+
 
     ////////////////////////////////////////////////////////////////////////////
     public boolean isEmpty() {

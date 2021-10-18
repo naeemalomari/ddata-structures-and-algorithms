@@ -5,7 +5,11 @@ package Challenge15;
 
 import org.w3c.dom.Node;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
+
     public static void main(String[] args) {
 
 
@@ -39,7 +43,7 @@ public class App {
         System.out.println(binarySearchTree2.compareTo(binarySearchContains));
 
 
-        BinarySearchTree<Integer> binarySearchTreeMax=new BinarySearchTree<>();
+        BinarySearchTree<Integer> binarySearchTreeMax = new BinarySearchTree<>();
         binarySearchTreeMax.insert(20);
         binarySearchTreeMax.insert(8);
         binarySearchTreeMax.insert(100);
@@ -48,5 +52,19 @@ public class App {
         binarySearchTreeMax.insert(270);
         binarySearchTreeMax.insert(85);
         System.out.println(binarySearchTreeMax.maxNumberInTree());
+
+        BinarySearchTree<Integer> binaryBreadthTree = new BinarySearchTree<>();
+        binaryBreadthTree.insert(100);
+        binaryBreadthTree.insert(4);
+        binaryBreadthTree.insert(470);
+        binaryBreadthTree.insert(800);
+        binaryBreadthTree.insert(5);
+        binaryBreadthTree.insert(16);
+        binaryBreadthTree.insert(270);
+        binaryBreadthTree.insert(85);
+        ArrayList<Integer> list ;
+        list = binaryBreadthTree.levelOrder(binaryBreadthTree);
+        System.out.println(list);
+
     }
 }
