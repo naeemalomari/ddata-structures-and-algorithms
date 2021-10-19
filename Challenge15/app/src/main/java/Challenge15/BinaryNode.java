@@ -1,7 +1,9 @@
 package Challenge15;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class BinaryNode<T> {
     private T data;
@@ -11,6 +13,10 @@ public class BinaryNode<T> {
 
     public BinaryNode(T data) {
         this.data = data;
+    }
+
+    public BinaryNode() {
+
     }
 
 
@@ -37,6 +43,9 @@ public class BinaryNode<T> {
     public void setRightNode(BinaryNode<T> rightNode) {
         this.rightNode = rightNode;
     }
+
+
+
 
     @Override
     public String toString() {
