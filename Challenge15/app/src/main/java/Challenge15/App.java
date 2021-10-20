@@ -44,11 +44,11 @@ public class App {
 
 
         BinarySearchTree<Integer> binarySearchTreeMax = new BinarySearchTree<>();
-        binarySearchTreeMax.insert(20);
+        binarySearchTreeMax.insert(19);
         binarySearchTreeMax.insert(8);
-        binarySearchTreeMax.insert(100);
         binarySearchTreeMax.insert(4);
         binarySearchTreeMax.insert(16);
+//        binarySearchTreeMax.insert(16);
 //        binarySearchTreeMax.insert(270);
 //        binarySearchTreeMax.insert(250);
 //        binarySearchTreeMax.insert(220);
@@ -57,10 +57,10 @@ public class App {
         System.out.println(binarySearchTreeMax.maxNumberInTree());
 
         BinarySearchTree<Integer> binaryBreadthTree = new BinarySearchTree<>();
+        binaryBreadthTree.insert(16);
+        binaryBreadthTree.insert(50);
+        binaryBreadthTree.insert(40);
         binaryBreadthTree.insert(100);
-        binaryBreadthTree.insert(4);
-        binaryBreadthTree.insert(470);
-//        binaryBreadthTree.insert(802);
 //        binaryBreadthTree.insert(801);
 //        binaryBreadthTree.insert(803);
 //        binaryBreadthTree.insert(800);
@@ -75,6 +75,6 @@ public class App {
         System.out.println(list);
 //        BinarySearchTree.CompareDirectoriesFilesNum(binaryBreadthTree,binarySearchTreeMax );
 //        System.out.println(binarySearchTree2.compareTo(binarySearchContains));
-        System.out.println(binaryBreadthTree.con(binaryBreadthTree,binarySearchTreeMax));
+        System.out.println(binaryBreadthTree.compare(binaryBreadthTree,binarySearchTreeMax));
     }
 }

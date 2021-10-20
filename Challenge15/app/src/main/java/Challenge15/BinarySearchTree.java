@@ -97,36 +97,52 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         System.out.print(root.getData() + " -> ");
     }
 
-    public int file(BinaryNode<T> t1) {
 
-//        if (root == null)
-//            return 0;
 
-        if (t1.getLeftNode() == null &&
-                t1.getRightNode() == null) {
+
+
+    public int numberOfFile(BinaryNode<T> tree1) {
+
+        if (root == null)
+            return 0;
+        if (tree1.getLeftNode() == null &&
+                tree1.getRightNode() == null) {
             sum = sum + 1;
         }
-        if (t1.getLeftNode() != null)
-            file(t1.getLeftNode());
-        if (t1.getRightNode() != null)
-            file(t1.getRightNode());
-//        int sum2 = sum;
-
+        if (tree1.getLeftNode() != null)
+            numberOfFile(tree1.getLeftNode());
+        if (tree1.getRightNode() != null)
+            numberOfFile(tree1.getRightNode());
         return sum;
     }
 
-    public boolean con(BinarySearchTree<T> t1, BinarySearchTree<T> t2) {
+    public boolean compare(BinarySearchTree<T> tree1, BinarySearchTree<T> tree2) {
 
-        int a = file(t1.getRoot()) ;
-        System.out.println(a);
+        int number1 = numberOfFile(tree1.getRoot()) ;
+        System.out.println(number1);
         sum=0;
-        int a2 = file(t2.getRoot()) ;
-        System.out.println(a2);
+        int number2 = numberOfFile(tree2.getRoot()) ;
+        System.out.println(number2);
         sum=0;
-
-//        return file(t1.getRoot()) == file(t2.getRoot());
-        return a==a2;
+        return number1==number2;
     }
+
+
+//    public int sumOfOdd() {
+//        if (isEmpty()) {
+//            return 0;
+//        }
+//        ArrayList<T> treeList = preOrder();
+//        int sum = 0;
+//
+//        for (int i = 0; i < treeList.size(); i++) {
+//            if (Integer.parseInt(treeList.get(i) + "") % 2 != 0) {
+//                sum = sum + Integer.parseInt(treeList.get(i) + "");
+//            }
+//
+//        }
+//        return sum;
+//    }
 
     //////////////////////////////////////////////////////////////PRE--ORDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     public ArrayList<T> preOder200() {
