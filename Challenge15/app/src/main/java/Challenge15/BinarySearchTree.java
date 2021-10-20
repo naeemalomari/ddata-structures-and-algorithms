@@ -12,7 +12,7 @@ import java.util.Queue;
 public class BinarySearchTree<T extends Comparable<T>> implements Comparable<BinarySearchTree<T>> {
 
     BinaryNode<T> root;
-
+    int sum = 0;
 
     /////////////////////////////////INORDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     public void inorderTraversal() {
@@ -97,6 +97,53 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         System.out.print(root.getData() + " -> ");
     }
 
+
+
+
+
+    public int numberOfFile(BinaryNode<T> tree1) {
+
+        if (root == null)
+            return 0;
+        if (tree1.getLeftNode() == null &&
+                tree1.getRightNode() == null) {
+            sum = sum + 1;
+        }
+        if (tree1.getLeftNode() != null)
+            numberOfFile(tree1.getLeftNode());
+        if (tree1.getRightNode() != null)
+            numberOfFile(tree1.getRightNode());
+        return sum;
+    }
+
+    public boolean compare(BinarySearchTree<T> tree1, BinarySearchTree<T> tree2) {
+
+        int number1 = numberOfFile(tree1.getRoot()) ;
+        System.out.println(number1);
+        sum=0;
+        int number2 = numberOfFile(tree2.getRoot()) ;
+        System.out.println(number2);
+        sum=0;
+        return number1==number2;
+    }
+
+
+//    public int sumOfOdd() {
+//        if (isEmpty()) {
+//            return 0;
+//        }
+//        ArrayList<T> treeList = preOrder();
+//        int sum = 0;
+//
+//        for (int i = 0; i < treeList.size(); i++) {
+//            if (Integer.parseInt(treeList.get(i) + "") % 2 != 0) {
+//                sum = sum + Integer.parseInt(treeList.get(i) + "");
+//            }
+//
+//        }
+//        return sum;
+//    }
+
     //////////////////////////////////////////////////////////////PRE--ORDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     public ArrayList<T> preOder200() {
         if (isEmpty()) {
@@ -176,7 +223,6 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         }
         return list;
     }
-
 
     ////////////////////////////////////////////////////////////////////////////
     public boolean isEmpty() {

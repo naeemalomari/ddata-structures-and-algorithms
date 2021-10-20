@@ -44,27 +44,37 @@ public class App {
 
 
         BinarySearchTree<Integer> binarySearchTreeMax = new BinarySearchTree<>();
-        binarySearchTreeMax.insert(20);
+        binarySearchTreeMax.insert(19);
         binarySearchTreeMax.insert(8);
-        binarySearchTreeMax.insert(100);
         binarySearchTreeMax.insert(4);
         binarySearchTreeMax.insert(16);
-        binarySearchTreeMax.insert(270);
-        binarySearchTreeMax.insert(85);
+//        binarySearchTreeMax.insert(16);
+//        binarySearchTreeMax.insert(270);
+//        binarySearchTreeMax.insert(250);
+//        binarySearchTreeMax.insert(220);
+//        binarySearchTreeMax.insert(210);
+//        binarySearchTreeMax.insert(85);
         System.out.println(binarySearchTreeMax.maxNumberInTree());
 
         BinarySearchTree<Integer> binaryBreadthTree = new BinarySearchTree<>();
-        binaryBreadthTree.insert(100);
-        binaryBreadthTree.insert(4);
-        binaryBreadthTree.insert(470);
-        binaryBreadthTree.insert(800);
-        binaryBreadthTree.insert(5);
         binaryBreadthTree.insert(16);
-        binaryBreadthTree.insert(270);
-        binaryBreadthTree.insert(85);
+        binaryBreadthTree.insert(50);
+        binaryBreadthTree.insert(40);
+        binaryBreadthTree.insert(100);
+//        binaryBreadthTree.insert(801);
+//        binaryBreadthTree.insert(803);
+//        binaryBreadthTree.insert(800);
+//        binaryBreadthTree.insert(5);
+//        binaryBreadthTree.insert(16);
+//        binaryBreadthTree.insert(270);
+//        binaryBreadthTree.insert(2);
+//        binaryBreadthTree.insert(7);
+//        binaryBreadthTree.insert(85);
         ArrayList<Integer> list ;
         list = binaryBreadthTree.levelOrder(binaryBreadthTree);
         System.out.println(list);
-
+//        BinarySearchTree.CompareDirectoriesFilesNum(binaryBreadthTree,binarySearchTreeMax );
+//        System.out.println(binarySearchTree2.compareTo(binarySearchContains));
+        System.out.println(binaryBreadthTree.compare(binaryBreadthTree,binarySearchTreeMax));
     }
 }
