@@ -10,7 +10,7 @@ Data structure which have three concept pre-order, in-order and post order.
 
 ## White Board
 
-![challenge17](./Challenge17.jpg)
+![challenge17](./Challenge18.jpg)
 
 
 ## Approach & Efficiency
