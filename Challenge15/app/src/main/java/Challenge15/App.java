@@ -3,6 +3,7 @@
  */
 package Challenge15;
 
+import ktree.KTree;
 import org.w3c.dom.Node;
 
 import java.util.ArrayList;
@@ -76,5 +77,21 @@ public class App {
 //        BinarySearchTree.CompareDirectoriesFilesNum(binaryBreadthTree,binarySearchTreeMax );
 //        System.out.println(binarySearchTree2.compareTo(binarySearchContains));
         System.out.println(binaryBreadthTree.compare(binaryBreadthTree,binarySearchTreeMax));
+
+
+
+
+
+        KTree kTree = new KTree(1);
+
+        kTree.add(1);
+        kTree.add(2);
+        kTree.add(3);
+        kTree.add(5);
+        kTree.add(15);
+
+        System.out.println(kTree);
+        System.out.println(kTree.fizzBuzzTree(kTree));
+
     }
-}
+    }
