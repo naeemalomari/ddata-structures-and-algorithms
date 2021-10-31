@@ -29,7 +29,7 @@ class AppTest {
 
         InsertionSort insertionSort = new InsertionSort();
         insertionSort.insertionSort(arr2);
-        assertEquals("[8, 5, 8, 12, 18, 20]", Arrays.toString(arr2));
+        assertEquals("[-2, 5, 8, 12, 18, 20]", Arrays.toString(arr2));
 
     }
 }
