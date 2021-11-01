@@ -3,7 +3,7 @@
 insertion sort that will sort the array from the smallest to the biggest number in the array
 
 ## Whiteboard Process
-![challenge26](./Challenge26.jpg)
+![challenge27](./Challenge27.jpg)
 
 
 ## Approach & Efficiency
