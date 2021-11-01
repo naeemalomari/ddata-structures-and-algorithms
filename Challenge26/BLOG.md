@@ -3,4 +3,4 @@
 ## In each Iteration process -- > 
 
 
-![VERIFICATION](./BLOG.jpg)
+![VERIFICATION](./Challenge27Blog.jpg)
