@@ -7,12 +7,17 @@ import java.util.Arrays;
 
 public class App {
     public static void main(String[] args) {
-        int [] array = {8,4,23,42,16,15};
+        int [] array = {8,4,23,42,16,15,55,47,89,45,11,47,72,44};
 
         InsertionSort insertionSort = new InsertionSort();
         insertionSort.insertionSort(array);
 
         System.out.println(Arrays.toString(array));
+        System.out.println("**--============================--**");
+        MergeSort mergeSort= new MergeSort();
+        mergeSort.sort(array);
+        System.out.println(Arrays.toString(array));
+
     }
 
 

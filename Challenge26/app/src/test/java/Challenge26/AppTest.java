@@ -32,4 +32,24 @@ class AppTest {
         assertEquals("[-2, 5, 8, 12, 18, 20]", Arrays.toString(arr2));
 
     }
+    @Test
+    public void mergeSortTest1(){
+
+        int[] arr1 = {8, 4, 23, 42, 16, 15};
+        MergeSort mergeSort = new MergeSort();
+        mergeSort.sort(arr1);
+        assertEquals("[4, 8, 15, 16, 23, 42]", Arrays.toString(arr1));
+
+    }
+
+    @Test
+    public void mergeSortTest2(){
+
+        int [] arr2 ={20, 18, 12, 8, 5, -2};
+
+        MergeSort mergeSort = new MergeSort();
+        mergeSort.sort(arr2);
+        assertEquals("[-2, 5, 8, 12, 18, 20]", Arrays.toString(arr2));
+
+    }
 }
