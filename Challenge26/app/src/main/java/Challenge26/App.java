@@ -7,17 +7,20 @@ import java.util.Arrays;
 
 public class App {
     public static void main(String[] args) {
-        int [] array = {8,4,23,42,16,15,55,47,89,45,11,47,72,44};
+        int [] array = {8,4,23,42,16,15};
 
-        InsertionSort insertionSort = new InsertionSort();
-        insertionSort.insertionSort(array);
-
+//        InsertionSort insertionSort = new InsertionSort();
+//        insertionSort.insertionSort(array);
+//
+//        System.out.println(Arrays.toString(array));
+//        System.out.println("**--============================--**");
+//        MergeSort mergeSort= new MergeSort();
+//        mergeSort.sort(array);
+//        System.out.println(Arrays.toString(array));
+        System.out.println("*************************************");
+        QuickSort quickSort= new QuickSort();
+        quickSort.quickSort(array, 0,5);
         System.out.println(Arrays.toString(array));
-        System.out.println("**--============================--**");
-        MergeSort mergeSort= new MergeSort();
-        mergeSort.sort(array);
-        System.out.println(Arrays.toString(array));
-
     }
 
 

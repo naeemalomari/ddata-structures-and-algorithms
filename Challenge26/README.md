@@ -1,9 +1,9 @@
 # Challenge Summary
 
-insertion sort that will sort the array from the smallest to the biggest number in the array
+Quick sort that will sort the array from the smallest to the biggest number in the array
 
 ## Whiteboard Process
-![challenge27](./Challenge27.jpg)
+![challenge28](./CodeChallenge28.jpg)
 
 
 ## Approach & Efficiency
