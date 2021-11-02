@@ -52,4 +52,23 @@ class AppTest {
         assertEquals("[-2, 5, 8, 12, 18, 20]", Arrays.toString(arr2));
 
     }
+    @Test
+    public void QuickSortTest1(){
+
+        int[] arr1 = {8, 4, 23, 42, 16, 15};
+        QuickSort quickSort = new QuickSort();
+        quickSort.quickSort(arr1, 0,5);
+        assertEquals("[4, 8, 15, 16, 23, 42]", Arrays.toString(arr1));
+
+    }
+    @Test
+    public void QuickSortTest2(){
+
+        int[] arr2 = {8, 4, 23, 42, 16, 15};
+        QuickSort quickSort = new QuickSort();
+        quickSort.quickSort(arr2, 0,5);
+        assertEquals("[4, 8, 15, 16, 23, 42]", Arrays.toString(arr2));
+
+    }
+
 }
