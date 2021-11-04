@@ -101,7 +101,7 @@ public class HashTable<K, V> {
 
         // if the load factor (number of hasnnodes) goes beyond the threshold
         // double the hashtble aka the bucket array
-        if ((1.0 * size) / numBuckets >= 0.7) {
+        if ((1.0 * size) / numBuckets >= 0.9) {
             ArrayList<HashNode<K, V>> temp = bucketArray;
             bucketArray = new ArrayList<>();
             numBuckets = 2 * numBuckets;
@@ -184,4 +184,23 @@ public class HashTable<K, V> {
         // key not found
         return null;
     }
+
+    public boolean contain(K key) {
+        int bucketIndex = getBucketIndex(key);
+        int hashCode = hashCode(key);
+
+        HashNode<K, V> head = bucketArray.get(bucketIndex);
+
+        // search the linnked list osaid 000000
+        while (head != null) {
+            if (head.key.equals(key) && head.hashCode == hashCode) {
+                return true;
+            }
+
+            head = head.next;
+        }
+        // key not found
+        return false;
+    }
+
 }

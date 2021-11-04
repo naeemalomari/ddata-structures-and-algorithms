@@ -30,6 +30,10 @@ public class App {
         System.out.println("The Sally allowance is => " + studentAllowances.get("Sally"));
         System.out.println("Delete Sally => " + studentAllowances.remove("Sally"));
         System.out.println("The size is => " + studentAllowances.getSize());
+        System.out.println("contains or not ---> " + studentAllowances.contain("Naim"));
+        System.out.println("contains or not ---> " + studentAllowances.contain("Osaid"));
+
+
 //        LinkedList linkedList = new LinkedList();
 //        linkedList.append("N");
 //        linkedList.append("A");
