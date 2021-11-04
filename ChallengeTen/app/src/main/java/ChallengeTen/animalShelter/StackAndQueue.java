@@ -1,4 +1,4 @@
-package ChallengeTen;
+package ChallengeTen.animalShelter;
 
 import ChallengeTen.stack.structure.Stack;
 

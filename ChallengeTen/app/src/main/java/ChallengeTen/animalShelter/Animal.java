@@ -1,4 +1,4 @@
-package ChallengeTen;
+package ChallengeTen.animalShelter;
 
 public class Animal {
     private String type;

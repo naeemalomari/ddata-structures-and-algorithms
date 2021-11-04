@@ -1,6 +1,5 @@
-package ChallengeTen;
+package ChallengeTen.animalShelter;
 
-import ChallengeTen.queue.data.QueueNode;
 import ChallengeTen.queue.structure.Queue;
 
 public class AnimalShelter {

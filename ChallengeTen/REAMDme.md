@@ -1,14 +1,11 @@
-Challenge Summary
-Function Called validateBrackets, that take string and return boolean.
-
-So it checks for the 3 types of brackets, and return true if the brackets in the string are balanced or false if they are not.
-
-Approach & Efficiency
-
-Big O time -> O(n) because we are looping inside the string character by character.
-
-Big O space -> O(n) because the method is taking a String.
+# HashTables
 
 
-WhiteBoard process:
-![challenge11](./Challenge13.jpg)
+Data structure that store data using key/value pairs, By converting the string to numbers using the hashCode to store that key/value pairs.
+
+
+## Challenge
+
+
+creating a hash table from scratch and create methods to deal with this data structure, adding to the hashtable, get this data from the hashtable, 
+checking if this key is contains in the hashtable or not, and searching for the index for specific key.

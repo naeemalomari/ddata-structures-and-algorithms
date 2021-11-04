@@ -3,6 +3,8 @@
  */
 package ChallengeTen;
 
+import ChallengeTen.LinkedList.structure.LinkedList;
+import ChallengeTen.hashTable.HashTable;
 import ChallengeTen.queue.structure.Queue;
 import ChallengeTen.stack.PseudoQueue;
 import ChallengeTen.stack.structure.Stack;
@@ -10,6 +12,56 @@ import ChallengeTen.stack.structure.Stack;
 public class App {
 
     public static void main(String[] args) {
+
+        HashTable<String, Integer> studentAllowances = new HashTable<>();
+        studentAllowances.add("John", 300);
+        studentAllowances.add("Sally", 400);
+        studentAllowances.add("Tom", 200);
+        studentAllowances.add("Jade", 100);
+        studentAllowances.add("Doa", 600);
+        studentAllowances.add("Farah", 700);
+        studentAllowances.add("Jason", 90000);
+        studentAllowances.add("Morgan", 800);
+        studentAllowances.add("Naim", 1000);
+        studentAllowances.add("Qusai", 1500);
+        studentAllowances.add("Deyaa", 10000);
+
+        System.out.println("The size is => " + studentAllowances.getSize());
+        System.out.println("The Sally allowance is => " + studentAllowances.get("Sally"));
+        System.out.println("Delete Sally => " + studentAllowances.remove("Sally"));
+        System.out.println("The size is => " + studentAllowances.getSize());
+        System.out.println("contains or not ---> " + studentAllowances.contain("Naim"));
+        System.out.println("contains or not ---> " + studentAllowances.contain("Osaid"));
+
+
+//        LinkedList linkedList = new LinkedList();
+//        linkedList.append("N");
+//        linkedList.append("A");
+//        linkedList.append("f");
+//
+//        linkedList.append("A");
+//        linkedList.append("N");
+//        System.out.println(linkedList.palindrome());
+//    linkedList.append("N");
+//    System.out.println(linkedList);
+//    System.out.println(linkedList.include("N"));
+//    System.out.println(linkedList.include("P"));
+//    linkedList.insertBefore("A", "M");
+//    linkedList.insertBefore("M", "E");
+//    System.out.println(linkedList);
+//    linkedList.insertAfter("N", "OOP");
+//    System.out.println(linkedList);
+//    System.out.println(linkedList.kth(-1));
+//        System.out.println(linkedList.kth(3));
+//      LinkedList linkedList1 =new LinkedList();
+//    linkedList1.append("E");
+//      linkedList1.append("E");
+//    System.out.println(linkedList);
+//    System.out.println(linkedList1);
+
+//    System.out.println("N E A E M");
+//    System.out.println(linkedList.reversedLinkedList(linkedList));
+
 ////
 ////        stackReturns();
 ////        queueReturns();
@@ -36,15 +88,15 @@ public class App {
 //        System.out.println(stackAndQueue.validateBrackets("{()}"));
 //
 
-        Stack stack1=new Stack();
-        stack1.push("5");
-        stack1.push("2");
-        stack1.push("3");
-        stack1.push("4");
-        stack1.push("1");
-
-        System.out.println(stack1.getMax());
-
+//        Stack stack1=new Stack();
+//        stack1.push("5");
+//        stack1.push("2");
+//        stack1.push("3");
+//        stack1.push("4");
+//        stack1.push("1");
+//
+//        System.out.println(stack1.getMax());
+//
 
 
 

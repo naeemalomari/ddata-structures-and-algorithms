@@ -3,6 +3,8 @@
  */
 package ChallengeTen;
 
+import ChallengeTen.LinkedList.structure.LinkedList;
+import ChallengeTen.animalShelter.*;
 import ChallengeTen.queue.structure.Queue;
 import ChallengeTen.stack.PseudoQueue;
 import ChallengeTen.stack.structure.Stack;
@@ -195,5 +197,196 @@ class AppTest {
 
 //        stackAndQueue.validateBrackets("{{{}}}");
         assertTrue(stackAndQueue.validateBrackets(""));
+    }
+    @Test void appHasAGreeting() {
+
+        LinkedList classUnderTest = new LinkedList();
+        classUnderTest.insert("E");
+        classUnderTest.insert("N");
+        classUnderTest.insert("G");
+        classUnderTest.insert("N");
+        classUnderTest.insert("A");
+        classUnderTest.insert("I");
+        classUnderTest.insert("M.");
+        assertEquals(" { E }  ->  { N }  ->  { G }  ->  { N }  ->  { A }  ->  { I }  ->  { M. }  ->  NULL ", classUnderTest.toString());
+        assertTrue(classUnderTest.include("E"));
+    }
+
+
+    @Test
+    public void isEmptyTest() {
+        LinkedList testList = new LinkedList();
+
+
+    }
+
+    @Test
+    public void addNewNodeAtEndTest() {
+        LinkedList testList = new LinkedList();
+        testList.insert("M");
+        testList.insert("M");
+
+    }
+
+
+    @Test
+    public void addBeforeAndAfterTest() {
+        LinkedList testList = new LinkedList();
+        testList.insert("N");
+        testList.insert("A");
+        testList.insert("I");
+        testList.insert("M");
+        assertEquals(" { N }  ->  { A }  ->  { I }  ->  { M }  ->  NULL ", testList.toString());
+
+    }
+
+
+    @Test
+    public void greaterThanLength() {
+        LinkedList testList = new LinkedList();
+        testList.insert("N");
+        testList.insert("A");
+        testList.insert("I");
+        testList.insert("M");
+        assertEquals("Exception", testList.kth(5));
+    }
+
+    @Test
+    public void equalThanLength() {
+        LinkedList testList = new LinkedList();
+        testList.insert("N");
+        testList.insert("A");
+        testList.insert("I");
+        testList.insert("M");
+        assertEquals("Exception", testList.kth(4));
+    }
+
+    @Test
+    public void negativeIndex() {
+        LinkedList testList = new LinkedList();
+        testList.insert("N");
+        testList.insert("A");
+        testList.insert("I");
+        testList.insert("M");
+        assertEquals("Exception", testList.kth(-1));
+    }
+
+    @Test
+    public void size1() {
+        LinkedList testList = new LinkedList();
+        testList.insert("N");
+        assertEquals("Exception", testList.kth(1));
+    }
+
+    @Test
+    public void happyPath() {
+        LinkedList testList = new LinkedList();
+
+        testList.insert("H");
+        testList.insert("a");
+        testList.insert("p");
+        testList.insert("p");
+        testList.insert("y");
+        testList.insert(" ");
+        testList.insert("P");
+        testList.insert("a");
+        testList.insert("t");
+        testList.insert("h");
+
+        assertEquals(" ", testList.kth(4));
+    }
+    @Test
+    public void zipList(){
+
+        LinkedList testZip =new LinkedList();
+        LinkedList testZip1=new LinkedList();
+        testZip.insert("H");
+        testZip.insert("a");
+        testZip.insert("p");
+        testZip1.insert("p");
+        testZip1.insert("y");
+
+
+        assertEquals(" { H }  ->  { p }  ->  { a }  ->  { y }  ->  { p }  ->  NULL " , (testZip.zipLists(testZip,testZip1)).toString());
+
+    }
+    @Test
+    public void zipList1(){
+
+        LinkedList testZip =new LinkedList();
+        LinkedList testZip1=new LinkedList();
+//    testZip.insert("H");
+//    testZip.insert("a");
+//    testZip.insert("p");
+//    testZip1.insert("p");
+//    testZip1.insert("y");
+
+
+        assertNull(testZip.zipLists(testZip1,testZip), "Both lists are empty");
+
+    }
+    @Test
+    public void zipList2(){
+
+        LinkedList testZip =new LinkedList();
+        LinkedList testZip1=new LinkedList();
+        testZip.insert("H");
+        testZip.insert("a");
+        testZip.insert("p");
+//    testZip1.insert("p");
+//    testZip1.insert("y");
+
+
+
+        assertEquals(" { H }  ->  { a }  ->  { p }  ->  NULL ", (testZip.zipLists(testZip,testZip1)).toString());
+
+    }
+    @Test
+    public void zipList3(){
+
+        LinkedList testZip =new LinkedList();
+        LinkedList testZip1=new LinkedList();
+//    testZip.insert("H");
+//    testZip.insert("a");
+//    testZip.insert("p");
+        testZip1.insert("p");
+        testZip1.insert("y");
+
+
+
+        assertEquals(" { p }  ->  { y }  ->  NULL ", (testZip.zipLists(testZip,testZip1)).toString());
+
+    }
+    @Test
+    public void zipList4(){
+
+        LinkedList testZip =new LinkedList();
+        LinkedList testZip1=new LinkedList();
+        testZip.insert("H");
+//    testZip.insert("a");
+//    testZip.insert("p");
+//    testZip1.insert("p");
+        testZip1.insert("y");
+
+
+
+        assertEquals(" { H }  ->  NULL ", (testZip.zipLists(testZip,testZip1)).toString());
+
+    }
+    @Test
+    public void zipList5(){
+
+        LinkedList testZip =new LinkedList();
+        LinkedList testZip1=new LinkedList();
+//    testZip.insert("H");
+//    testZip.insert("a");
+//    testZip.insert("p");
+//    testZip1.insert("p");
+        testZip1.insert("y");
+
+
+
+        assertEquals(" { y }  ->  NULL ", (testZip.zipLists(testZip,testZip1)).toString());
+
     }
 }
