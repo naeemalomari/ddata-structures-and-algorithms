@@ -54,8 +54,6 @@ public class Stack {
 
             if(Integer.parseInt(top.getData()) >  value ){
                 value=Integer.parseInt(top.getData());
-
-
             }
             this.pop();
         }

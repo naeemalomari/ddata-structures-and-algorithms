@@ -3,8 +3,6 @@
  */
 package ChallengeTen;
 
-import ChallengeTen.LinkedList.structure.LinkedList;
-import ChallengeTen.hashTable.HashTable;
 import ChallengeTen.queue.structure.Queue;
 import ChallengeTen.stack.PseudoQueue;
 import ChallengeTen.stack.structure.Stack;
@@ -34,17 +32,17 @@ public class App {
 //        System.out.println("contains or not ---> " + studentAllowances.contain("Naim"));
 //        System.out.println("contains or not ---> " + studentAllowances.contain("Osaid"));
 //
-
-        LinkedList linkedList = new LinkedList();
-        linkedList.append("D");
-        linkedList.append("E");
-        linkedList.append("V");
+//
+//        LinkedList linkedList = new LinkedList();
+//        linkedList.append("D");
+//        linkedList.append("E");
+//        linkedList.append("V");
 //        linkedList.append("N");
 //        linkedList.append("A");
 //        linkedList.append("I");
 //        linkedList.append("M");
-        linkedList.insertAfter("V", "NAIM");
-        System.out.println(linkedList);
+//        linkedList.insertAfter("V", "NAIM");
+//        System.out.println(linkedList);
 
 //        linkedList.append("N");
 //        LinkedList linkedList1 = new LinkedList();
@@ -81,39 +79,40 @@ public class App {
 //    System.out.println(linkedList.reversedLinkedList(linkedList));
 
 ////
-////        stackReturns();
+//        stackReturns();
 ////        queueReturns();
-////        pseudoQueue();
+//        pseudoQueue();
 //        AnimalShelter animalShelter =new AnimalShelter();
 //        Animal dog =new Dog();
 //        animalShelter.enqueue(dog);
-////        animalShelter.enqueue(dog);
-////        animalShelter.enqueue(dog);
-////        animalShelter.enqueue(dog);
+//        animalShelter.enqueue(dog);
+//        animalShelter.enqueue(dog);
+//        animalShelter.enqueue(dog);
 //        Animal cat=new Cat();
-////        animalShelter.enqueue(cat);
-////        animalShelter.enqueue(cat);
-////        animalShelter.enqueue(dog);
+//        animalShelter.enqueue(cat);
+//        animalShelter.enqueue(cat);
+//        animalShelter.enqueue(dog);
 //        animalShelter.enqueue(cat);
 //        System.out.println(animalShelter.dequeue("cat"));
 //        System.out.println(animalShelter);
 //        System.out.println(animalShelter.dequeue("dog"));
 //        System.out.println(animalShelter);
-//
+
 //        StackAndQueue stackAndQueue =new StackAndQueue();
-//        System.out.println(stackAndQueue.validateBrackets("{{{mynameisnaeem}}}"));
-//        System.out.println(stackAndQueue.validateBrackets("{{{mynameisnaeem}"));
-//        System.out.println(stackAndQueue.validateBrackets("{()}"));
+//        System.out.println(stackAndQueue.validateBrackets("{[{m}]}"));
+//        System.out.println(stackAndQueue.validateBrackets("{{{y}"));
+//        System.out.println(stackAndQueue.validateBrackets("[{()}]"));
 //
 
-//        Stack stack1=new Stack();
-//        stack1.push("5");
-//        stack1.push("2");
-//        stack1.push("3");
-//        stack1.push("4");
-//        stack1.push("1");
-//
-//        System.out.println(stack1.getMax());
+        Stack stack1=new Stack();
+        stack1.push("5");
+        stack1.push("2");
+        stack1.push("3");
+        stack1.push("4");
+        stack1.push("1");
+        stack1.push("6");
+
+        System.out.println(stack1.getMax());
 //
 
 
@@ -174,10 +173,11 @@ public class App {
         trials.enqueue("C");
         trials.enqueue("D");
         System.out.println(trials.dequeue());
+        System.out.println(trials);
         System.out.println(trials.dequeue());
         System.out.println(trials);
-        trials.enqueue("SSS");
-        trials.enqueue("DDD");
+
+        System.out.println(trials.dequeue());
         System.out.println(trials);
         System.out.println(trials.dequeue());
         System.out.println(trials);
