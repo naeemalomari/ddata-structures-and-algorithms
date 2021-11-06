@@ -65,7 +65,7 @@ public class LinkedList {
         if (head == null) {
             System.out.println("this " + data + " Not Exist in the linked list ");
             return;
-        } else if (data == head.getData()) {
+        } else if (data == head.getData()) { // if the data exists in the first node
             node.next = head;
             head = node;
             size++;
@@ -103,6 +103,8 @@ public class LinkedList {
             System.out.println("this " + data + " Not Exist in the linked list ");
         }
     }
+
+
 
     public int getSize() {
         return size;

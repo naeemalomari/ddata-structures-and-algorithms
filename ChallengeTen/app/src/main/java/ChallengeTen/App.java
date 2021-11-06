@@ -43,7 +43,7 @@ public class App {
 //        linkedList.append("A");
 //        linkedList.append("I");
 //        linkedList.append("M");
-        linkedList.insertBefore("V", "N");
+        linkedList.insertAfter("V", "NAIM");
         System.out.println(linkedList);
 
 //        linkedList.append("N");
