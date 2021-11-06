@@ -26,6 +26,7 @@ public class LinkedList {
         size++;
     }
 
+
     public boolean include(String data) {
         if (head == null) {
             LinkedListNode node = new LinkedListNode(data);
@@ -108,13 +109,15 @@ public class LinkedList {
     }
 
     public String kth(int index) {
-        LinkedListNode current = head;
+//        LinkedListNode current = head;
         if (head == null) {
             System.out.println("The list is empty please insert node.");
         }
         if (index > getSize() - 1 || index < 0) {
             return "Exception";
         }
+        LinkedListNode current = head;
+
         int i = 0;
         while (i < (getSize() - index - 1)) {
             current = current.getNext();
@@ -124,12 +127,11 @@ public class LinkedList {
     }
 
 
-    public LinkedList zipLists(LinkedList list1, LinkedList list2){
-        if(list1.head == null && list2.head == null){
+    public LinkedList zipLists(LinkedList list1, LinkedList list2) {
+        if (list1.head == null && list2.head == null) {
             System.out.println("Both lists are empty");
             return null;
-        }
-        else if (list1.head == null) {
+        } else if (list1.head == null) {
             return list2;
         } else if (list2.head == null) {
             return list1;
@@ -138,15 +140,15 @@ public class LinkedList {
             LinkedListNode current2 = list2.head;
             LinkedListNode ref1, ref2;
             while (current1.getNext() != null && current2 != null) {
-                ref1=current1.getNext();
-                ref2= current2.getNext();
+                ref1 = current1.getNext();
+                ref2 = current2.getNext();
                 current1.setNext(current2);
                 current2.setNext(ref1);
-                current1=ref1;
+                current1 = ref1;
 //    (I can use one of them they are the same L:152)  current1=current1.getNext().getNext();
-                current2=ref2;
+                current2 = ref2;
                 size++;
-                if(current1.getNext() == null){
+                if (current1.getNext() == null) {
                     current1.setNext(current2);
                     break;
                 }
@@ -155,33 +157,32 @@ public class LinkedList {
         return list1;
     }
 
-    public LinkedList reversedLinkedList(LinkedList list){
-        LinkedListNode current =list.head;
-        LinkedListNode previous =null;
-        LinkedListNode next =null;
-        while(current != null){
-            next=current.getNext();
+    public LinkedList reversedLinkedList(LinkedList list) {
+        LinkedListNode current = list.head;
+        LinkedListNode previous = null;
+        LinkedListNode next = null;
+        while (current != null) {
+            next = current.getNext();
             current.setNext(previous);
-            previous= current;
-            current=next;
+            previous = current;
+            current = next;
         }
-        list.head=previous;
+        list.head = previous;
         return list;
     }
 
 
-    public LinkedListNode reversedNode(LinkedListNode node){
-        LinkedListNode prev =null;
-        while(head !=null){
+    public LinkedListNode reversedNode(LinkedListNode node) {
+        LinkedListNode prev = null;
+        while (head != null) {
             LinkedListNode next = head.next;
-            head.next=prev;
-            prev=head;
-            head=next;
+            head.next = prev;
+            prev = head;
+            head = next;
 
         }
         return prev;
     }
-
 
 
 //
@@ -203,18 +204,18 @@ public class LinkedList {
 
 
     public boolean palindrome() {
-        if (this.head ==null){
+        if (this.head == null) {
             System.out.println("List is empty");
-            return true ;
+            return true;
         }
         ArrayList<String> arr = new ArrayList<>();
         LinkedListNode current = this.head;
-        while (current!=null){
+        while (current != null) {
             arr.add(current.getData());
             current = current.getNext();
         }
-        for (int i = 0; i < arr.size()/2; i++) {
-            if (!arr.get(i).equals(arr.get(arr.size()-i-1))){
+        for (int i = 0; i < arr.size() / 2; i++) {
+            if (!arr.get(i).equals(arr.get(arr.size() - i - 1))) {
                 return false;
             }
         }

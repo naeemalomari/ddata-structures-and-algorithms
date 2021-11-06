@@ -13,34 +13,52 @@ public class App {
 
     public static void main(String[] args) {
 
-        HashTable<String, Integer> studentAllowances = new HashTable<>();
-        studentAllowances.add("John", 300);
-        studentAllowances.add("Sally", 400);
-        studentAllowances.add("Tom", 200);
-        studentAllowances.add("Jade", 100);
-        studentAllowances.add("Doa", 600);
-        studentAllowances.add("Farah", 700);
-        studentAllowances.add("Jason", 90000);
-        studentAllowances.add("Morgan", 800);
-        studentAllowances.add("Naim", 1000);
-        studentAllowances.add("Qusai", 1500);
-        studentAllowances.add("Deyaa", 10000);
-
-        System.out.println("The size is => " + studentAllowances.getSize());
-        System.out.println("The Sally allowance is => " + studentAllowances.get("Sally"));
-        System.out.println("Delete Sally => " + studentAllowances.remove("Sally"));
-        System.out.println("The size is => " + studentAllowances.getSize());
-        System.out.println("contains or not ---> " + studentAllowances.contain("Naim"));
-        System.out.println("contains or not ---> " + studentAllowances.contain("Osaid"));
-
-
-//        LinkedList linkedList = new LinkedList();
-//        linkedList.append("N");
-//        linkedList.append("A");
-//        linkedList.append("f");
+//        HashTable<String, Integer> studentAllowances = new HashTable<>();
+//        studentAllowances.add("John", 300);
+//        studentAllowances.add("Sally", 400);
+//        studentAllowances.add("Tom", 200);
+//        studentAllowances.add("Jade", 100);
+//        studentAllowances.add("Doa", 600);
+//        studentAllowances.add("Farah", 700);
+//        studentAllowances.add("Jason", 90000);
+//        studentAllowances.add("Morgan", 800);
+//        studentAllowances.add("Naim", 1000);
+//        studentAllowances.add("Qusai", 1500);
+//        studentAllowances.add("Deyaa", 10000);
+//        studentAllowances.add("Naim", 1000);
 //
-//        linkedList.append("A");
+//        System.out.println("The size is => " + studentAllowances.getSize());
+//        System.out.println("The Sally allowance is => " + studentAllowances.get("Sally"));
+//        System.out.println("Delete Sally => " + studentAllowances.remove("Sally"));
+//        System.out.println("The size is => " + studentAllowances.getSize());
+//        System.out.println("contains or not ---> " + studentAllowances.contain("Naim"));
+//        System.out.println("contains or not ---> " + studentAllowances.contain("Osaid"));
+//
+
+        LinkedList linkedList = new LinkedList();
+        linkedList.append("D");
+        linkedList.append("E");
+        linkedList.append("V");
 //        linkedList.append("N");
+//        linkedList.append("A");
+//        linkedList.append("I");
+//        linkedList.append("M");
+        linkedList.insertBefore("V", "N");
+        System.out.println(linkedList);
+
+//        linkedList.append("N");
+//        LinkedList linkedList1 = new LinkedList();
+//        linkedList1.append("0");
+//        linkedList1.append("C");
+//        linkedList1.append("U");
+//        linkedList1.append("S");
+//        linkedList1.append("N");
+//        linkedList1.append("A");
+//        linkedList1.append("I");
+//        linkedList1.append("M");
+//        System.out.println(linkedList.zipLists(linkedList, linkedList1));
+//        linkedList1.append("A");
+//        linkedList1.append("N");
 //        System.out.println(linkedList.palindrome());
 //    linkedList.append("N");
 //    System.out.println(linkedList);
