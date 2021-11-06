@@ -15,7 +15,6 @@ public class PseudoQueue {
         if (stack1.isEmpty() && stack2.isEmpty()) {
             return "Empty";
         }
-
         if (stack2.top == null) {
             while (stack1.top != null) {
                 stack2.push(stack1.pop());
@@ -28,7 +27,6 @@ public class PseudoQueue {
             }
         }
         return value;
-
     }
 
     @Override
