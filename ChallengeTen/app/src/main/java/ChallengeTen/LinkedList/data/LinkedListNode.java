@@ -16,6 +16,10 @@ public class LinkedListNode {
         return data;
     }
 
+    public void setData(String data) {
+        this.data = data;
+    }
+
     public LinkedListNode getNext() {
         return next;
     }
@@ -23,5 +27,6 @@ public class LinkedListNode {
     public void setNext(LinkedListNode next) {
         this.next = next;
     }
+
 
 }

@@ -105,7 +105,6 @@ public class LinkedList {
     }
 
 
-
     public int getSize() {
         return size;
     }
@@ -223,6 +222,30 @@ public class LinkedList {
         }
         return true;
     }
+
+
+    // practicing :
+
+    public LinkedListNode sortList(LinkedListNode head) {
+        LinkedListNode current1 = head;
+        LinkedListNode current2 = head;
+        LinkedListNode current3 = head;
+        while (current1 != null) {
+            current2 = current3;
+            while (current2 != null) {
+                if (Integer.parseInt(current2.getData()) < Integer.parseInt(current1.getData())) {
+                    String value = current1.getData();
+                    current1.setData(current2.getData());
+                    current2.setData(value);
+                }
+                current2 = current2.next;
+            }
+            current1 = current1.next;
+            current3 = current3.next;
+        }
+        return head;
+    }
+
 
     @Override
     public String toString() {

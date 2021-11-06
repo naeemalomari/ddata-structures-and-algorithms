@@ -3,6 +3,8 @@
  */
 package ChallengeTen;
 
+import ChallengeTen.LinkedList.data.LinkedListNode;
+import ChallengeTen.LinkedList.structure.LinkedList;
 import ChallengeTen.queue.structure.Queue;
 import ChallengeTen.stack.PseudoQueue;
 import ChallengeTen.stack.structure.Stack;
@@ -10,6 +12,8 @@ import ChallengeTen.stack.structure.Stack;
 public class App {
 
     public static void main(String[] args) {
+
+
 
 //        HashTable<String, Integer> studentAllowances = new HashTable<>();
 //        studentAllowances.add("John", 300);
@@ -33,16 +37,18 @@ public class App {
 //        System.out.println("contains or not ---> " + studentAllowances.contain("Osaid"));
 //
 //
-//        LinkedList linkedList = new LinkedList();
-//        linkedList.append("D");
-//        linkedList.append("E");
-//        linkedList.append("V");
-//        linkedList.append("N");
-//        linkedList.append("A");
-//        linkedList.append("I");
+        LinkedList linkedList = new LinkedList();
+        linkedList.append("1");
+        linkedList.append("2");
+        linkedList.append("3");
+        linkedList.append("4");
+        linkedList.append("5");
+        linkedList.append("6");
 //        linkedList.append("M");
 //        linkedList.insertAfter("V", "NAIM");
 //        System.out.println(linkedList);
+//        System.out.println(linkedList.evenOdd(linkedList.head).toString());
+        System.out.println(linkedList.sortList(linkedList.head).toString());
 
 //        linkedList.append("N");
 //        LinkedList linkedList1 = new LinkedList();
@@ -112,7 +118,8 @@ public class App {
         stack1.push("1");
         stack1.push("6");
 
-        System.out.println(stack1.getMax());
+
+//        System.out.println(stack1.getMax());
 //
 
 
@@ -185,23 +192,17 @@ public class App {
 
     ///////////////////////CHALLENGE14B//////////////////////////////////
 //    public static String DuckDuckGoose(int k, String... string) {
-//
-//
 //        GenericQueue<String> queue = new GenericQueue<>();
 //
 //        for (String s : string) {
 //            queue.enQueue(s);
 //        }
-//
 //        while (queue.getFront().getNext() != null) {
 //            for (int i = 1; i < k; i++) {
 //                queue.enQueue(queue.deQueue(null));
 //            }
 //            queue.deQueue(null);
 //        }
-//
 //        return queue.peek();
-//
-//
 //    }
 }
