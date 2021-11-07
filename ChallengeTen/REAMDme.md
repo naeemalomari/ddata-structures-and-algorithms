@@ -10,4 +10,4 @@ Add a Strings to the hash table and check if this word is repeated or not.
 
 ## White board : 
 
-![challenge31](./Challenge31.jpg)
+![challenge31](./Challenge31A.jpg)

@@ -414,5 +414,12 @@ class AppTest {
         String paragraph = "Once upon a time Naim ";
         assertEquals("no repeated words", test.repeatedWord(paragraph));
     }
+    @Test
+    public void repeatedWordTestEmpty(){
 
+        HashTable<String, Integer> test = new HashTable<String, Integer>();
+
+        String paragraph = "";
+        assertEquals("no repeated words", test.repeatedWord(paragraph));
+    }
 }
