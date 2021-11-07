@@ -214,15 +214,15 @@ public class HashTable<K, V> {
                 word = word.substring(0, word.length() - 1);
 //                System.out.println(word);
             }
-            if (!word.equals("")) {
+            if (word != "") {
 //                System.out.println(word);
                 int count = hashMap.get(word) != null ? hashMap.get(word) : 0;
                 System.out.println(word);
-                if (count == 3) {
+                if (count == 1) {
 //                    System.out.println(word);
                     return word;
                 }
-                hashMap.add(word, count + 3);
+                hashMap.add(word, count + 1);
             }
         }
         return "no repeated words";
