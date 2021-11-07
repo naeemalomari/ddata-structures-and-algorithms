@@ -14,22 +14,22 @@ public class App {
 
     public static void main(String[] args) {
 
-        HashTable<String, Integer> studentAllowances = new HashTable<>();
-        studentAllowances.repeatedWord("It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only..."	);
-        studentAllowances.add("John", 300);
-        studentAllowances.add("Sally", 400);
-        studentAllowances.add("Tom", 200);
-        studentAllowances.add("Jade", 100);
-        studentAllowances.add("Doa", 600);
-        studentAllowances.add("Farah", 700);
-        studentAllowances.add("Jason", 90000);
-        studentAllowances.add("Morgan", 800);
-        studentAllowances.add("Naim", 1000);
-        studentAllowances.add("Qusai", 1500);
-        studentAllowances.add("Deyaa", 10000);
-        studentAllowances.add("Naim", 1000);
-
-        System.out.println("the repeated word is => "+ studentAllowances.repeatedWord("It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only..."	));
+//        HashTable<String, Integer> studentAllowances = new HashTable<>();
+//        studentAllowances.repeatedWord("It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only..."	);
+//        studentAllowances.add("John", 300);
+//        studentAllowances.add("Sally", 400);
+//        studentAllowances.add("Tom", 200);
+//        studentAllowances.add("Jade", 100);
+//        studentAllowances.add("Doa", 600);
+//        studentAllowances.add("Farah", 700);
+//        studentAllowances.add("Jason", 90000);
+//        studentAllowances.add("Morgan", 800);
+//        studentAllowances.add("Naim", 1000);
+//        studentAllowances.add("Qusai", 1500);
+//        studentAllowances.add("Deyaa", 10000);
+//        studentAllowances.add("Naim", 1000);
+//
+//        System.out.println("the repeated word is => "+ studentAllowances.repeatedWord("It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only..."	));
 //        System.out.println("The Sally allowance is => " + studentAllowances.get("Sally"));
 //        System.out.println("Delete Sally => " + studentAllowances.remove("Sally"));
 //        System.out.println("The size is => " + studentAllowances.getSize());
@@ -37,14 +37,14 @@ public class App {
 //        System.out.println("contains or not ---> " + studentAllowances.contain("Osaid"));
 
 
-//        LinkedList linkedList = new LinkedList();
-//        linkedList.append("1");
-//        linkedList.append("2");
-//        linkedList.append("3");
-//        linkedList.append("4");
-//        linkedList.append("5");
-//        linkedList.append("6");
-//        System.out.println(linkedList);
+        LinkedList linkedList = new LinkedList();
+        linkedList.append("1");
+        linkedList.append("2");
+        linkedList.append("3");
+        linkedList.append("4");
+        linkedList.append("5");
+        linkedList.append("6");
+        System.out.println(linkedList.remove(linkedList.head, "3"));
 //        System.out.println(linkedList.evenOdd(linkedList.head).toString());
 //        System.out.println(linkedList.sortList(linkedList.head).toString());
 //        linkedList.append("N");
