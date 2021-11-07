@@ -5,6 +5,7 @@ package ChallengeTen;
 
 import ChallengeTen.LinkedList.data.LinkedListNode;
 import ChallengeTen.LinkedList.structure.LinkedList;
+import ChallengeTen.hashTable.HashTable;
 import ChallengeTen.queue.structure.Queue;
 import ChallengeTen.stack.PseudoQueue;
 import ChallengeTen.stack.structure.Stack;
@@ -13,53 +14,49 @@ public class App {
 
     public static void main(String[] args) {
 
+        HashTable<String, Integer> studentAllowances = new HashTable<>();
+        studentAllowances.repeatedWord("Once ue princess who..."	);
+        studentAllowances.add("John", 300);
+        studentAllowances.add("Sally", 400);
+        studentAllowances.add("Tom", 200);
+        studentAllowances.add("Jade", 100);
+        studentAllowances.add("Doa", 600);
+        studentAllowances.add("Farah", 700);
+        studentAllowances.add("Jason", 90000);
+        studentAllowances.add("Morgan", 800);
+        studentAllowances.add("Naim", 1000);
+        studentAllowances.add("Qusai", 1500);
+        studentAllowances.add("Deyaa", 10000);
+        studentAllowances.add("Naim", 1000);
 
-
-//        HashTable<String, Integer> studentAllowances = new HashTable<>();
-//        studentAllowances.add("John", 300);
-//        studentAllowances.add("Sally", 400);
-//        studentAllowances.add("Tom", 200);
-//        studentAllowances.add("Jade", 100);
-//        studentAllowances.add("Doa", 600);
-//        studentAllowances.add("Farah", 700);
-//        studentAllowances.add("Jason", 90000);
-//        studentAllowances.add("Morgan", 800);
-//        studentAllowances.add("Naim", 1000);
-//        studentAllowances.add("Qusai", 1500);
-//        studentAllowances.add("Deyaa", 10000);
-//        studentAllowances.add("Naim", 1000);
-//
-//        System.out.println("The size is => " + studentAllowances.getSize());
+        System.out.println("the repeated word is => "+ studentAllowances.repeatedWord("Once upobrave princess who..."	));
 //        System.out.println("The Sally allowance is => " + studentAllowances.get("Sally"));
 //        System.out.println("Delete Sally => " + studentAllowances.remove("Sally"));
 //        System.out.println("The size is => " + studentAllowances.getSize());
 //        System.out.println("contains or not ---> " + studentAllowances.contain("Naim"));
 //        System.out.println("contains or not ---> " + studentAllowances.contain("Osaid"));
-//
-//
-        LinkedList linkedList = new LinkedList();
-        linkedList.append("1");
-        linkedList.append("2");
-        linkedList.append("3");
-        linkedList.append("4");
-        linkedList.append("5");
-        linkedList.append("6");
-//        linkedList.append("M");
-//        linkedList.insertAfter("V", "NAIM");
+
+
+//        LinkedList linkedList = new LinkedList();
+//        linkedList.append("1");
+//        linkedList.append("2");
+//        linkedList.append("3");
+//        linkedList.append("4");
+//        linkedList.append("5");
+//        linkedList.append("6");
 //        System.out.println(linkedList);
 //        System.out.println(linkedList.evenOdd(linkedList.head).toString());
-        System.out.println(linkedList.sortList(linkedList.head).toString());
-
+//        System.out.println(linkedList.sortList(linkedList.head).toString());
 //        linkedList.append("N");
 //        LinkedList linkedList1 = new LinkedList();
-//        linkedList1.append("0");
-//        linkedList1.append("C");
-//        linkedList1.append("U");
-//        linkedList1.append("S");
-//        linkedList1.append("N");
-//        linkedList1.append("A");
-//        linkedList1.append("I");
-//        linkedList1.append("M");
+//        linkedList1.append("1.5");
+//        linkedList1.append("2.5");
+//        linkedList1.append("3.5");
+//        linkedList1.append("4.5");
+//        linkedList1.append("5.5");
+//        linkedList1.append("6.5");
+//        linkedList1.append("7");
+//        linkedList1.append("7.5");
 //        System.out.println(linkedList.zipLists(linkedList, linkedList1));
 //        linkedList1.append("A");
 //        linkedList1.append("N");
