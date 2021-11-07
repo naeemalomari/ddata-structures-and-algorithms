@@ -4,6 +4,7 @@ package ChallengeTen.hashTable;
 import ChallengeTen.hashTable.HashNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -201,20 +202,27 @@ public class HashTable<K, V> {
         return false;
     }
 
+
+
     public String repeatedWord(String strings) {
         String allWords = strings.toLowerCase(Locale.ENGLISH);
         String[] token = allWords.split(" ");
+//        System.out.println(Arrays.toString(token));
         HashTable<String, Integer> hashMap = new HashTable<String, Integer>();
         for (String word : token) {
             if (word.contains(",")) {
                 word = word.substring(0, word.length() - 1);
+//                System.out.println(word);
             }
             if (!word.equals("")) {
+//                System.out.println(word);
                 int count = hashMap.get(word) != null ? hashMap.get(word) : 0;
-                if (count == 1) {
+                System.out.println(word);
+                if (count == 3) {
+//                    System.out.println(word);
                     return word;
                 }
-                hashMap.add(word, count + 1);
+                hashMap.add(word, count + 3);
             }
         }
         return "no repeated words";
