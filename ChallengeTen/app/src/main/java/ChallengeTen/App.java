@@ -5,6 +5,7 @@ package ChallengeTen;
 
 import ChallengeTen.LinkedList.data.LinkedListNode;
 import ChallengeTen.LinkedList.structure.LinkedList;
+import ChallengeTen.hashTable.HashTable;
 import ChallengeTen.queue.structure.Queue;
 import ChallengeTen.stack.PseudoQueue;
 import ChallengeTen.stack.structure.Stack;
@@ -13,53 +14,49 @@ public class App {
 
     public static void main(String[] args) {
 
+        HashTable<String, Integer> studentAllowances = new HashTable<>();
+        studentAllowances.repeatedWord("It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only..."	);
+        studentAllowances.add("John", 300);
+        studentAllowances.add("Sally", 400);
+        studentAllowances.add("Tom", 200);
+        studentAllowances.add("Jade", 100);
+        studentAllowances.add("Doa", 600);
+        studentAllowances.add("Farah", 700);
+        studentAllowances.add("Jason", 90000);
+        studentAllowances.add("Morgan", 800);
+        studentAllowances.add("Naim", 1000);
+        studentAllowances.add("Qusai", 1500);
+        studentAllowances.add("Deyaa", 10000);
+        studentAllowances.add("Naim", 1000);
 
-
-//        HashTable<String, Integer> studentAllowances = new HashTable<>();
-//        studentAllowances.add("John", 300);
-//        studentAllowances.add("Sally", 400);
-//        studentAllowances.add("Tom", 200);
-//        studentAllowances.add("Jade", 100);
-//        studentAllowances.add("Doa", 600);
-//        studentAllowances.add("Farah", 700);
-//        studentAllowances.add("Jason", 90000);
-//        studentAllowances.add("Morgan", 800);
-//        studentAllowances.add("Naim", 1000);
-//        studentAllowances.add("Qusai", 1500);
-//        studentAllowances.add("Deyaa", 10000);
-//        studentAllowances.add("Naim", 1000);
-//
-//        System.out.println("The size is => " + studentAllowances.getSize());
+        System.out.println("the repeated word is => "+ studentAllowances.repeatedWord("It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only..."	));
 //        System.out.println("The Sally allowance is => " + studentAllowances.get("Sally"));
 //        System.out.println("Delete Sally => " + studentAllowances.remove("Sally"));
 //        System.out.println("The size is => " + studentAllowances.getSize());
 //        System.out.println("contains or not ---> " + studentAllowances.contain("Naim"));
 //        System.out.println("contains or not ---> " + studentAllowances.contain("Osaid"));
-//
-//
-        LinkedList linkedList = new LinkedList();
-        linkedList.append("1");
-        linkedList.append("2");
-        linkedList.append("3");
-        linkedList.append("4");
-        linkedList.append("5");
-        linkedList.append("6");
-//        linkedList.append("M");
-//        linkedList.insertAfter("V", "NAIM");
+
+
+//        LinkedList linkedList = new LinkedList();
+//        linkedList.append("1");
+//        linkedList.append("2");
+//        linkedList.append("3");
+//        linkedList.append("4");
+//        linkedList.append("5");
+//        linkedList.append("6");
 //        System.out.println(linkedList);
 //        System.out.println(linkedList.evenOdd(linkedList.head).toString());
-        System.out.println(linkedList.sortList(linkedList.head).toString());
-
+//        System.out.println(linkedList.sortList(linkedList.head).toString());
 //        linkedList.append("N");
 //        LinkedList linkedList1 = new LinkedList();
-//        linkedList1.append("0");
-//        linkedList1.append("C");
-//        linkedList1.append("U");
-//        linkedList1.append("S");
-//        linkedList1.append("N");
-//        linkedList1.append("A");
-//        linkedList1.append("I");
-//        linkedList1.append("M");
+//        linkedList1.append("1.5");
+//        linkedList1.append("2.5");
+//        linkedList1.append("3.5");
+//        linkedList1.append("4.5");
+//        linkedList1.append("5.5");
+//        linkedList1.append("6.5");
+//        linkedList1.append("7");
+//        linkedList1.append("7.5");
 //        System.out.println(linkedList.zipLists(linkedList, linkedList1));
 //        linkedList1.append("A");
 //        linkedList1.append("N");
