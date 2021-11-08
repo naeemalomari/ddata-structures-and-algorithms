@@ -6,8 +6,8 @@ Data structure that store data using key/value pairs, By converting the string t
 
 ## Challenge
 
-Add a Strings to the hash table and check if this word is repeated or not.
+Create a function that returns the relation data between two trees 
 
 ## White board : 
 
-![challenge31](./Challenge31A.jpg)
+![challenge31](./Challenge32.jpg)

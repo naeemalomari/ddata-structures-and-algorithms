@@ -28,5 +28,11 @@ public class LinkedListNode {
         this.next = next;
     }
 
-
+    @Override
+    public String toString() {
+        return "LinkedListNode{" +
+                "data='" + data + '\'' +
+                ", next=" + next +
+                '}';
+    }
 }

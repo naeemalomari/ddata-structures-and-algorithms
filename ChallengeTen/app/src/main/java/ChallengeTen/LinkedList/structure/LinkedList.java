@@ -44,6 +44,8 @@ public class LinkedList {
     }
 
 
+
+
     public void append(String data) {
         if (head == null) {
             LinkedListNode node = new LinkedListNode(data);
@@ -242,6 +244,22 @@ public class LinkedList {
             }
             current1 = current1.next;
             current3 = current3.next;
+        }
+        return head;
+    }
+
+
+    public LinkedListNode remove(LinkedListNode head, String data) {
+        if (head == null) {
+            System.out.println("go");
+        } else {
+            LinkedListNode current = head;
+            while (current.getNext() != null) {
+                if (current.getNext().getData() == data) {
+                    current.setNext(current.getNext().getNext());
+                }
+                current = current.getNext();
+            }
         }
         return head;
     }
