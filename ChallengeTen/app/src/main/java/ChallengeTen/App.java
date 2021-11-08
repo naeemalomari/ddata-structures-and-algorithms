@@ -3,6 +3,8 @@
  */
 package ChallengeTen;
 
+import ChallengeTen.BinaryTree.BinaryTree;
+import ChallengeTen.BinaryTree.BinaryTreeNode;
 import ChallengeTen.LinkedList.data.LinkedListNode;
 import ChallengeTen.LinkedList.structure.LinkedList;
 import ChallengeTen.hashTable.HashTable;
@@ -13,6 +15,39 @@ import ChallengeTen.stack.structure.Stack;
 public class App {
 
     public static void main(String[] args) {
+
+
+        HashTable<Integer,Integer> intersection = new HashTable<Integer, Integer>();
+
+        BinaryTree tree1 = new BinaryTree();
+        BinaryTree tree2 = new BinaryTree();
+
+        tree1.setRoot(new BinaryTreeNode(150));
+        tree1.getRoot().setLeft(new BinaryTreeNode(100));
+        tree1.getRoot().setRight(new BinaryTreeNode(250));
+        tree1.getRoot().getRight().setLeft(new BinaryTreeNode(200));
+        tree1.getRoot().getRight().setRight(new BinaryTreeNode(350));
+        tree1.getRoot().getRight().getRight().setLeft(new BinaryTreeNode(300));
+        tree1.getRoot().getRight().getRight().setRight(new BinaryTreeNode(500));
+        tree1.getRoot().getLeft().setLeft(new BinaryTreeNode(75));
+        tree1.getRoot().getLeft().setRight(new BinaryTreeNode(160));
+        tree1.getRoot().getLeft().getRight().setLeft(new BinaryTreeNode(125));
+        tree1.getRoot().getLeft().getRight().setRight(new BinaryTreeNode(175));
+
+        tree2.setRoot(new BinaryTreeNode(42));
+        tree2.getRoot().setLeft(new BinaryTreeNode(100));
+        tree2.getRoot().setRight(new BinaryTreeNode(600));
+        tree2.getRoot().getRight().setLeft(new BinaryTreeNode(200));
+        tree2.getRoot().getRight().setRight(new BinaryTreeNode(350));
+        tree2.getRoot().getRight().getRight().setLeft(new BinaryTreeNode(4));
+        tree2.getRoot().getRight().getRight().setRight(new BinaryTreeNode(500));
+        tree2.getRoot().getLeft().setLeft(new BinaryTreeNode(15));
+        tree2.getRoot().getLeft().setRight(new BinaryTreeNode(160));
+        tree2.getRoot().getLeft().getRight().setLeft(new BinaryTreeNode(125));
+        tree2.getRoot().getLeft().getRight().setRight(new BinaryTreeNode(175));
+
+        System.out.println(intersection.treeIntersection(tree1, tree2));
+
 
         HashTable<String, Integer> studentAllowances = new HashTable<>();
         studentAllowances.repeatedWord("It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only..."	);
@@ -38,7 +73,7 @@ public class App {
 
 
 
-        
+
         LinkedList linkedList = new LinkedList();
         linkedList.append("1");
         linkedList.append("2");
