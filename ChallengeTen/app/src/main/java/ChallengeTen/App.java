@@ -12,10 +12,28 @@ import ChallengeTen.queue.structure.Queue;
 import ChallengeTen.stack.PseudoQueue;
 import ChallengeTen.stack.structure.Stack;
 
+import java.util.HashMap;
+
 public class App {
 
     public static void main(String[] args) {
 
+        HashMap<String, String> firstHashMap = new HashMap<>();
+        HashMap<String, String> secondHashMap = new HashMap<>();
+
+        firstHashMap.put("fond", "enamored");
+        firstHashMap.put("wrath", "anger");
+        firstHashMap.put("diligent", "employed");
+        firstHashMap.put("outfit", "garb");
+        firstHashMap.put("guide", "usher");
+
+        secondHashMap.put("fond", "averse");
+        secondHashMap.put("wrath", "delight");
+        secondHashMap.put("diligent", "idle");
+        secondHashMap.put("guide", "follow");
+        secondHashMap.put("flow", "jam");
+
+        System.out.println(HashTable.leftJoin(firstHashMap, secondHashMap));
 
         HashTable<Integer,Integer> intersection = new HashTable<Integer, Integer>();
 

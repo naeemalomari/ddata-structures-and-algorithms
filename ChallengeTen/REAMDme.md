@@ -10,4 +10,4 @@ Create a function that returns the relation data between two trees
 
 ## White board : 
 
-![challenge31](./Challenge32.jpg)
+![challenge33](./Challenge33.jpg)
