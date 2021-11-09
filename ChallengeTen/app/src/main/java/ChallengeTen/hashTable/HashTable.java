@@ -263,4 +263,19 @@ public class HashTable<K, V> {
             compare(node.getRight());
         }
     }
+
+
+    public static List<String> leftJoin(HashMap<String, String> h1, HashMap<String, String> h2) {
+
+        if (h1.keySet().isEmpty()) {
+            return null;
+        }
+        List<String> list = new ArrayList<>();
+        for (String k : h1.keySet()) {
+
+            list.add("[ " + k + ", " + h1.get(k) + ", " + h2.get(k) + " ]");
+        }
+        return list;
+    }
+
 }
