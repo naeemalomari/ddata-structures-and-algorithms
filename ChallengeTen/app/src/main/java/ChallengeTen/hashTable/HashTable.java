@@ -202,7 +202,6 @@ public class HashTable<K, V> {
     }
 
 
-
     public String repeatedWord(String strings) {
         String allWords = strings.toLowerCase(Locale.ENGLISH);
         String[] token = allWords.split(" ");
@@ -227,19 +226,15 @@ public class HashTable<K, V> {
         return "no repeated words";
     }
 
-    public HashMap<Integer,Integer> hashMap = new HashMap<>();
+    public HashMap<Integer, Integer> hashMap = new HashMap<>();
     public List<Integer> intersections = new ArrayList<>();
 
-    public List<Integer> treeIntersection(BinaryTree tree1, BinaryTree tree2){
-
-        if (tree1.getRoot() == null || tree2.getRoot()  == null) {
+    public List<Integer> treeIntersection(BinaryTree tree1, BinaryTree tree2) {
+        if (tree1.getRoot() == null || tree2.getRoot() == null) {
             return null;
         }
-
         traverse(tree2.getRoot());
-
         compare(tree1.getRoot());
-
         return intersections;
     }
 
@@ -247,29 +242,25 @@ public class HashTable<K, V> {
 
         if (node != null) {
 
-            int count = 0 ;
-            if(hashMap.get(node.getData()) == null){
+            int count = 0;
+            if (hashMap.get(node.getData()) == null) {
                 count = 1;
-            }else{
+            } else {
                 count = count + 1;
             }
-
             hashMap.put(node.getData(), count);
-
             traverse(node.getLeft());
             traverse(node.getRight());
         }
     }
 
-    public void compare(BinaryTreeNode node){
+    public void compare(BinaryTreeNode node) {
         if (node != null) {
-            if (hashMap.get(node.getData()) != null){
+            if (hashMap.get(node.getData()) != null) {
                 intersections.add(node.getData());
             }
             compare(node.getLeft());
             compare(node.getRight());
         }
-
     }
-
 }
