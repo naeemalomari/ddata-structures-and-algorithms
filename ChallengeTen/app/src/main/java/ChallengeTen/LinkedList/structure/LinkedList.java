@@ -16,6 +16,18 @@ public class LinkedList {
             LinkedListNode node = new LinkedListNode(data);
             head = node;
         } else {
+            LinkedListNode newNode = new LinkedListNode(data);
+            newNode.setNext(head);
+            head = newNode;
+        }
+        size++;
+    }
+
+    public void append(String data) {
+        if (head == null) {
+            LinkedListNode node = new LinkedListNode(data);
+            head = node;
+        } else {
             LinkedListNode current = head;
             while (current.getNext() != null) {
                 current = current.getNext();
@@ -25,7 +37,6 @@ public class LinkedList {
         }
         size++;
     }
-
 
     public boolean include(String data) {
         if (head == null) {
@@ -41,24 +52,6 @@ public class LinkedList {
             }
         }
         return false;
-    }
-
-
-
-
-    public void append(String data) {
-        if (head == null) {
-            LinkedListNode node = new LinkedListNode(data);
-            head = node;
-        } else {
-            LinkedListNode current = head;
-            while (current.getNext() != null) {
-                current = current.getNext();
-            }
-            LinkedListNode node = new LinkedListNode(data);
-            current.setNext(node);
-        }
-        size++;
     }
 
 
@@ -110,6 +103,7 @@ public class LinkedList {
     public int getSize() {
         return size;
     }
+
 
     public String kth(int index) {
 //        LinkedListNode current = head;
@@ -187,29 +181,10 @@ public class LinkedList {
         return prev;
     }
 
-
-//
-//  public boolean checkPalindrome(LinkedList list) {
-//  int midIndex = (size-1)/2;
-//  if(head==null){
-//    System.out.println("the list is empty ");
-//  }else{
-//    LinkedListNode current=head;
-//    while(current != null){
-//      for(int i=0;i<= midIndex;i++){
-//          current.getData();
-//      }
-//    }
-//
-//  }
-//  }
-    //I am loosing the ref
-
-
     public boolean palindrome() {
         if (this.head == null) {
             System.out.println("List is empty");
-            return true;
+            return false;
         }
         ArrayList<String> arr = new ArrayList<>();
         LinkedListNode current = this.head;
@@ -249,20 +224,47 @@ public class LinkedList {
     }
 
 
-    public LinkedListNode remove(LinkedListNode head, String data) {
+
+    public String remove(int index) throws IndexOutOfBoundsException {
+        String deletedNode = "";
         if (head == null) {
-            System.out.println("go");
+            System.out.println("List is empty");
         } else {
-            LinkedListNode current = head;
-            while (current.getNext() != null) {
-                if (current.getNext().getData() == data) {
-                    current.setNext(current.getNext().getNext());
-                }
-                current = current.getNext();
+            if (index > size || index < 0) {
+                throw new IndexOutOfBoundsException("Index out of bounds");
             }
+
+            // if deleting first node
+            if (index == 0) {
+                deletedNode = head.getData();
+                head = head.getNext();
+                size--;
+                return deletedNode;
+            }
+
+            int counter = 0;
+
+            LinkedListNode previous = null;
+            LinkedListNode current = head;
+
+            while (counter != index) {
+                previous = current;
+                current = current.getNext();
+                counter++;
+            }
+
+            previous.setNext(current.getNext());
+            current.setNext(null);
+            deletedNode = current.getData();
+            size--;
         }
-        return head;
+
+        return deletedNode;
     }
+
+
+
+
 
 
     @Override

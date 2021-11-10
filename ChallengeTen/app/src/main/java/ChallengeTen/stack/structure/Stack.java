@@ -60,6 +60,21 @@ public class Stack {
         return value;
     }
 
+
+    public Integer getMin(){
+        if(top == null) return 0;
+
+        int value =Integer.parseInt(this.pop());
+        while( top != null ){
+
+            if(Integer.parseInt(top.getData()) <  value ){
+                value=Integer.parseInt(top.getData());
+            }
+            this.pop();
+        }
+        return value;
+    }
+
     @Override
     public String toString() {
         return "Stack{" +
