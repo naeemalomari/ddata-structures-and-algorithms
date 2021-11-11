@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
  class GraphTest {
 
     Graph graph = new Graph();
- 
+
     @Test
     public void testBasics() {
         // Node can be successfully added to the graph
