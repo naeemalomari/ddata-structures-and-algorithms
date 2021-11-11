@@ -18,6 +18,10 @@ public class App {
 
     public static void main(String[] args) {
 
+
+        Queue queue = new Queue();
+
+        System.out.println(queue.duckDuckGoose(new String[]{"M", "A", "R", "A", "H"}, 3));
 //        pseudoQueue();
 //
 //        HashMap<String, String> firstHashMap = new HashMap<>();
@@ -93,17 +97,17 @@ public class App {
 
 
 
-
-        LinkedList linkedList = new LinkedList();
-        linkedList.append("77");
-        linkedList.append("70");
-        linkedList.append("88");
-        linkedList.append("80");
-        linkedList.append("62");
-        linkedList.append("100");
-//        linkedList.append("6");
-//        System.out.println(linkedList.remove(4));
-        System.out.println(linkedList.sortList(linkedList.head));
+//
+//        LinkedList linkedList = new LinkedList();
+//        linkedList.append("77");
+//        linkedList.append("70");
+//        linkedList.append("88");
+//        linkedList.append("80");
+//        linkedList.append("62");
+//        linkedList.append("100");
+////        linkedList.append("6");
+////        System.out.println(linkedList.remove(4));
+//        System.out.println(linkedList.sortList(linkedList.head));
 //        System.out.println(linkedList.remove(linkedList.head, "3"));
 //        System.out.println(linkedList.evenOdd(linkedList.head).toString());
 //        System.out.println(linkedList.sortList(linkedList.head).toString());
