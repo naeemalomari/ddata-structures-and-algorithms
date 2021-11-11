@@ -205,10 +205,8 @@ public class LinkedList {
 
     public LinkedListNode sortList(LinkedListNode head) {
         LinkedListNode current1 = head;
-        LinkedListNode current2 = head;
-        LinkedListNode current3 = head;
+        LinkedListNode current2 = current1.getNext();
         while (current1 != null) {
-            current2 = current3;
             while (current2 != null) {
                 if (Integer.parseInt(current2.getData()) < Integer.parseInt(current1.getData())) {
                     String value = current1.getData();
@@ -218,7 +216,7 @@ public class LinkedList {
                 current2 = current2.next;
             }
             current1 = current1.next;
-            current3 = current3.next;
+            current2 = current1;
         }
         return head;
     }
