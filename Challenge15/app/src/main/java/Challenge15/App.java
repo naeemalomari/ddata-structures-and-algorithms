@@ -15,17 +15,20 @@ public class App {
 
 
         BinarySearchTree<Integer> binarySearchContains = new BinarySearchTree<>();
-        binarySearchContains.insert(20);
+        binarySearchContains.insert(77);
         binarySearchContains.insert(8);
         binarySearchContains.insert(100);
         binarySearchContains.insert(4);
         binarySearchContains.insert(16);
+        binarySearchContains.insert(15);
         binarySearchContains.insert(27);
         binarySearchContains.insert(85);
 
-        System.out.println(binarySearchContains.contains(100));
+//        System.out.println(binarySearchContains.contains(100));
 //        System.out.println(binarySearchContains);
 
+        System.out.println(binarySearchContains.preOder200());
+        System.out.println("");
         binarySearchContains.inorderTraversal();
         System.out.println("");
         binarySearchContains.orderPost();

@@ -1,17 +1,13 @@
 package Challenge15;
 
 
-import com.sun.source.tree.BinaryTree;
-import org.w3c.dom.Node;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 public class BinarySearchTree<T extends Comparable<T>> implements Comparable<BinarySearchTree<T>> {
 
-    BinaryNode<T> root;
+    BinaryTreeNode<T> root;
     int sum = 0;
 
     /////////////////////////////////INORDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -23,7 +19,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         traverseInorder(root);
     }
 
-    private void traverseInorder(BinaryNode<T> root) {
+    private void traverseInorder(BinaryTreeNode<T> root) {
         if (root.getLeftNode() != null) {
             traverseInorder(root.getLeftNode());
         }
@@ -39,23 +35,23 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
     /////////////////////////////////////////////////////////////////INSERT///////////////////////////////////////
     public void insert(T data) {
         if (isEmpty()) { // tree empty
-            root = new BinaryNode<>(data);
+            root = new BinaryTreeNode<>(data);
         } else {
             insertHelper(data, root);
         }
     }
 
-    private void insertHelper(T data, BinaryNode<T> root) {
-        BinaryNode<T> binaryNode = new BinaryNode<>(data);
+    private void insertHelper(T data, BinaryTreeNode<T> root) {
+        BinaryTreeNode<T> binaryTreeNode = new BinaryTreeNode<>(data);
         if (data.compareTo(root.getData()) < 0) {
             if (root.getLeftNode() == null) {
-                root.setLeftNode(binaryNode);
+                root.setLeftNode(binaryTreeNode);
             } else {
                 insertHelper(data, root.getLeftNode());
             }
         } else if (data.compareTo(root.getData()) > 0) {
             if (root.getRightNode() == null) {
-                root.setRightNode(binaryNode);
+                root.setRightNode(binaryTreeNode);
             } else {
                 insertHelper(data, root.getRightNode());
             }
@@ -64,13 +60,13 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
 ///////////////////////////////////////////////CONTAINS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
     public boolean contains(T data) {
-        BinaryNode<T> binaryNode1 = root;
+        BinaryTreeNode<T> binaryTreeNode1 = root;
 
-        while (binaryNode1 != null) {
-            if (data.compareTo(binaryNode1.getData()) > 0)
-                binaryNode1 = binaryNode1.getRightNode();
-            else if (data.compareTo(binaryNode1.getData()) < 0)
-                binaryNode1 = binaryNode1.getLeftNode();
+        while (binaryTreeNode1 != null) {
+            if (data.compareTo(binaryTreeNode1.getData()) > 0)
+                binaryTreeNode1 = binaryTreeNode1.getRightNode();
+            else if (data.compareTo(binaryTreeNode1.getData()) < 0)
+                binaryTreeNode1 = binaryTreeNode1.getLeftNode();
             else
                 return true;
         }
@@ -87,7 +83,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         return listPost;
     }
 
-    public void postOrder(BinaryNode<T> root, ArrayList<T> listPost) {
+    public void postOrder(BinaryTreeNode<T> root, ArrayList<T> listPost) {
 
         if (root == null) {
             return;
@@ -101,7 +97,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
 
 
 
-    public int numberOfFile(BinaryNode<T> tree1) {
+    public int numberOfFile(BinaryTreeNode<T> tree1) {
 
         if (root == null)
             return 0;
@@ -150,12 +146,11 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
             return null;
         }
         ArrayList<T> listPre = new ArrayList<>();
-
         preOrder(root, listPre);
         return listPre;
     }
 
-    public void preOrder(BinaryNode<T> root, ArrayList<T> listPre) {
+    public void preOrder(BinaryTreeNode<T> root, ArrayList<T> listPre) {
         if (root == null) {
             return;
         }
@@ -206,12 +201,12 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
             return null;
         }
         ArrayList<T> list = new ArrayList<>();
-        Queue<BinaryNode<T>> teeQueue = new LinkedList<>();
-        BinaryNode<T> newNode = root;
+        Queue<BinaryTreeNode<T>> teeQueue = new LinkedList<>();
+        BinaryTreeNode<T> newNode = root;
         teeQueue.add(root);
         while (!teeQueue.isEmpty()) {
             //dequeue
-            BinaryNode<T> node = teeQueue.remove();
+            BinaryTreeNode<T> node = teeQueue.remove();
             list.add(node.getData());
             if (node.getLeftNode() != null) {
                 teeQueue.add(node.getLeftNode());
@@ -235,7 +230,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
                 "root=" + root + '}';
     }
 
-    public BinaryNode<T> getRoot() {
+    public BinaryTreeNode<T> getRoot() {
         return root;
     }
 
