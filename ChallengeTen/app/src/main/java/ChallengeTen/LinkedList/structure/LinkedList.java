@@ -11,7 +11,7 @@ public class LinkedList {
     private int size;
     private Exception IOException;
 
-    public void insert(String data) {
+    public void insert(String data) { // adding in the first node in the linkedlist
         if (head == null) {
             LinkedListNode node = new LinkedListNode(data);
             head = node;
@@ -23,7 +23,7 @@ public class LinkedList {
         size++;
     }
 
-    public void append(String data) {
+    public void append(String data) { // adding at the last node in the linkedlist
         if (head == null) {
             LinkedListNode node = new LinkedListNode(data);
             head = node;

@@ -13,9 +13,7 @@ public class StackAndQueue {
             if(item == '{' || item == '(' || item == '['){
                 stack.push(item + "");
             }
-
             else if(item == '}' || item == ')' || item == ']'){
-
 
                 String value = stack.peek();
                 if(((item+"").equals('}' + "")&&value.equals( '{' + "" )

@@ -54,7 +54,6 @@ public class Queue {
     }
 
 
-
     public String peek() {
         return front.getData();
     }
