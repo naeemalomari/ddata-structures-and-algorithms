@@ -1,21 +1,16 @@
 package Challenge15;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-
-public class BinaryNode<T> {
+public class BinaryTreeNode<T> {
     private T data;
 
-    private BinaryNode<T> leftNode;
-    private BinaryNode<T> rightNode;
+    private BinaryTreeNode<T> leftNode;
+    private BinaryTreeNode<T> rightNode;
 
-    public BinaryNode(T data) {
+    public BinaryTreeNode(T data) {
         this.data = data;
     }
 
-    public BinaryNode() {
+    public BinaryTreeNode() {
 
     }
 
@@ -28,19 +23,19 @@ public class BinaryNode<T> {
         this.data = data;
     }
 
-    public BinaryNode<T> getLeftNode() {
+    public BinaryTreeNode<T> getLeftNode() {
         return leftNode;
     }
 
-    public void setLeftNode(BinaryNode<T> leftNode) {
+    public void setLeftNode(BinaryTreeNode<T> leftNode) {
         this.leftNode = leftNode;
     }
 
-    public BinaryNode<T> getRightNode() {
+    public BinaryTreeNode<T> getRightNode() {
         return rightNode;
     }
 
-    public void setRightNode(BinaryNode<T> rightNode) {
+    public void setRightNode(BinaryTreeNode<T> rightNode) {
         this.rightNode = rightNode;
     }
 
