@@ -4,7 +4,24 @@
 package graph;
 
 public class Library {
-    public boolean someLibraryMethod() {
-        return true;
+    public static void main(String[] args) {
+        Graph graph = new Graph();
+        graph.addNode("hi");
+        graph.addNode("my");
+        graph.addNode("name");
+        graph.addNode("is");
+        graph.addNode("slim");
+        graph.addNode("shady");
+        graph.addNode("shady11");
+        System.out.println(graph.printGraph());
+
+        graph.addEdge("hi", "my");
+        graph.addEdge("my", "name");
+        graph.addEdge("is", "slim");
+        graph.addEdge("shady", "hi");
+        graph.removeEdge("shady", "hi");
+        graph.removeVertex("shady11");
+        System.out.println(graph.printGraph());
+
     }
 }
