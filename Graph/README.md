@@ -36,4 +36,7 @@ Efficiency Space o(n+2e)
 
 * Returns the total number of Vertices in the graph
 
+## White Board
 
+
+![Challenge36](./Challenge36.jpg)
