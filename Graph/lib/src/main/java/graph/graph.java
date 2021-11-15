@@ -92,6 +92,42 @@ class Graph {
         }
         return visited;
     }
+    /////////////////////////////////////code challenge 37///////////////////////
+
+    public void addEdgeWithWeight(String data1, String data2, int weight) {
+        Vertex Vertex1 = new Vertex(data1, weight);
+        Vertex Vertex2 = new Vertex(data2, weight);
+
+
+        adjVertices.get(Vertex1).add(Vertex2);
+        adjVertices.get(Vertex2).add(Vertex1);
+    }
+
+    public String businessTrip(Graph graph, List<String> citiesNames) {
+        int cost = 0;
+        if (citiesNames.size() <= 1)
+            return "null";
+
+        int findWeight;
+        for (int i = 0; i < citiesNames.size() - 1; i++) {
+            findWeight = findWeight(graph, citiesNames.get(i), citiesNames.get(i + 1));
+
+            if (findWeight == 0)
+                return "False, $0";
+
+            cost += findWeight;
+        }
+        return "True, $" + cost;
+    }
+
+    private int findWeight(Graph graph, String city1, String city2) {
+        for (Vertex vertex : graph.getNeighbors(city1)) {
+            if (Objects.equals(city2, vertex.label)) {
+                return vertex.weight;
+            }
+        }
+        return 0;
+    }
 
     String printGraph() {
         if (adjVertices.isEmpty()) {

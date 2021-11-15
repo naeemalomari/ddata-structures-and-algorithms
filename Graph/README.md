@@ -39,4 +39,4 @@ Efficiency Space o(n+2e)
 ## White Board
 
 
-![Challenge36](./Challenge36.jpg)
+![Challenge37](./Challenge37.jpg)
