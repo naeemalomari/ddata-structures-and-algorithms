@@ -5,6 +5,9 @@ package graph;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
  class GraphTest {
@@ -106,6 +109,101 @@ import static org.junit.jupiter.api.Assertions.*;
          graph.addEdge("Pandora", "Arendelle");
 
          assertEquals("[Pandora, Arendelle]", graph.breadthTraverse("Pandora").toString());
+     }
+
+     @Test
+     public void testEmpty() {
+
+         Graph graph = new Graph();
+         List<String> path = new ArrayList<>();
+
+         assertEquals("null", graph.businessTrip(graph, path));
+     }
+
+     @Test
+     public void testOnlyListItem() {
+
+         Graph graph = new Graph();
+         List<String> path = new ArrayList<>();
+
+         graph.addNode("Pandora");
+         graph.addNode("Arendelle");
+         graph.addNode("Metroville");
+         graph.addNode("Monstroplolis");
+         graph.addNode("Narnia");
+         graph.addNode("Naboo");
+
+         graph.addEdgeWithWeight("Pandora", "Arendelle", 150);
+         graph.addEdgeWithWeight("Pandora", "Metroville", 82);
+
+
+         graph.addEdgeWithWeight("Arendelle", "Metroville", 99);
+         graph.addEdgeWithWeight("Arendelle", "Monstroplolis", 42);
+
+         graph.addEdgeWithWeight("Metroville", "Monstroplolis", 105);
+         graph.addEdgeWithWeight("Metroville", "Narnia", 37);
+         graph.addEdgeWithWeight("Metroville", "Naboo", 26);
+
+         graph.addEdgeWithWeight("Monstroplolis", "Naboo", 73);
+         graph.addEdgeWithWeight("Narnia", "Naboo", 250);
+
+         path.add("Metroville");
+
+         assertEquals("null", graph.businessTrip(graph, path));
+
+     }
+
+     @Test
+     public void testDifferentPaths() {
+
+         Graph graph = new Graph();
+         List<String> path = new ArrayList<>();
+
+         graph.addNode("Pandora");
+         graph.addNode("Arendelle");
+         graph.addNode("Metroville");
+         graph.addNode("Monstroplolis");
+         graph.addNode("Narnia");
+         graph.addNode("Naboo");
+
+         graph.addEdgeWithWeight("Pandora", "Arendelle", 150);
+         graph.addEdgeWithWeight("Pandora", "Metroville", 82);
+
+
+         graph.addEdgeWithWeight("Arendelle", "Metroville", 99);
+         graph.addEdgeWithWeight("Arendelle", "Monstroplolis", 42);
+
+         graph.addEdgeWithWeight("Metroville", "Monstroplolis", 105);
+         graph.addEdgeWithWeight("Metroville", "Narnia", 37);
+         graph.addEdgeWithWeight("Metroville", "Naboo", 26);
+
+         graph.addEdgeWithWeight("Monstroplolis", "Naboo", 73);
+         graph.addEdgeWithWeight("Narnia", "Naboo", 250);
+
+         path.add("Metroville");
+         path.add("Pandora");
+
+         assertEquals("True, $82", graph.businessTrip(graph, path));
+
+         List<String> path1 = new ArrayList<>();
+         path1.add("Arendelle");
+         path1.add("Monstroplolis");
+         path1.add("Naboo");
+
+         assertEquals("True, $115", graph.businessTrip(graph, path1));
+
+         List<String> path2 = new ArrayList<>();
+         path2.add("Naboo");
+         path2.add("Pandora");
+
+         assertEquals("False, $0", graph.businessTrip(graph, path2));
+
+         List<String> path3 = new ArrayList<>();
+         path3.add("Narnia");
+         path3.add("Arendelle");
+         path3.add("Naboo");
+
+         assertEquals("False, $0", graph.businessTrip(graph, path3));
      }
 
 }
