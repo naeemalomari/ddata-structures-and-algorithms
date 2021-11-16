@@ -205,5 +205,56 @@ import static org.junit.jupiter.api.Assertions.*;
 
          assertEquals("False, $0", graph.businessTrip(graph, path3));
      }
+     @Test
+     public void depthFirstTest(){
 
+         Graph graph3 = new Graph();
+
+         graph3.addNode("A");
+         graph3.addNode("B");
+         graph3.addNode("C");
+         graph3.addNode("D");
+         graph3.addNode("E");
+         graph3.addNode("F");
+         graph3.addNode("G");
+         graph3.addNode("H");
+
+         graph3.addEdge("A", "D");
+         graph3.addEdge("A", "B");
+         graph3.addEdge("B", "D");
+         graph3.addEdge("B", "C");
+         graph3.addEdge("C", "G");
+         graph3.addEdge("D", "F");
+         graph3.addEdge("D", "H");
+         graph3.addEdge("D", "E");
+         graph3.addEdge("F", "H");
+
+         assertEquals("[A, B, C, G, D, E, H, F]", graph3.depthFirst("A").toString());
+     }
+
+     @Test
+     public void depthFirstOneVertex(){
+
+         Graph graph3 = new Graph();
+
+         graph3.addNode("A");
+
+         assertEquals("[A]", graph3.depthFirst("A").toString());
+     }
+
+     //    THIS TEST FOR THREE VERTICES AND ONE OF THEM DID NOT CONNECT WITH THE OTHER TWO VERTICES
+
+     @Test
+     public void depthFirstTest2(){
+
+         Graph graph3 = new Graph();
+
+         graph3.addNode("A");
+         graph3.addNode("B");
+         graph3.addNode("C");
+
+         graph3.addEdge("A", "B");
+
+         assertEquals("[A, B]", graph3.depthFirst("A").toString());
+     }
 }

@@ -130,23 +130,22 @@ class Graph {
     }
 
 
-    Set<Object> depthFirst(Object node) {
-        if (adjVertices.isEmpty()) {
-            return null;
-        }
-        Set<Object> visited = new LinkedHashSet<>();
-        Stack<Object> stack = new Stack<>();
-        stack.push(node);
-        visited.add(node);
+    Set<String> depthFirst(String root) {
+        Set<String> visited = new LinkedHashSet<>();
+        Stack<String> stack = new Stack<>();
+        stack.push(root);
+
         while (!stack.isEmpty()) {
-            Object tempNode = stack.pop();
-            for (Vertex v : getNeighbors(tempNode.toString())) {
-                if (!visited.contains(tempNode)) {
-                    visited.add(v.label);
-                    stack.push(v.label);
+            String vertex = stack.pop();
+            if (!visited.contains(vertex)) {
+                visited.add(vertex);
+
+                for (Vertex v : getNeighbors(vertex)) {
+                    stack.push( v.label);
                 }
             }
         }
+
         return visited;
     }
 

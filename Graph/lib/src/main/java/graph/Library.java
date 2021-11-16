@@ -58,5 +58,31 @@ public class Library {
 
         System.out.println("First Trip ---> " + graph2.businessTrip(graph2, cities));
         System.out.println("Second Trip ---> " + graph2.businessTrip(graph2, cities1));
+
+
+
+
+        Graph graph3 = new Graph();
+        graph3.addNode("A");
+        graph3.addNode("B");
+        graph3.addNode("C");
+        graph3.addNode("D");
+        graph3.addNode("E");
+        graph3.addNode("F");
+        graph3.addNode("G");
+        graph3.addNode("H");
+
+        graph3.addEdge("A", "D");
+        graph3.addEdge("A", "B");
+        graph3.addEdge("B", "D");
+        graph3.addEdge("B", "C");
+        graph3.addEdge("C", "G");
+        graph3.addEdge("D", "F");
+        graph3.addEdge("D", "H");
+        graph3.addEdge("D", "E");
+        graph3.addEdge("F", "H");
+
+        System.out.println("Depth first ---> " + graph3.depthFirst("A"));
+
     }
 }
