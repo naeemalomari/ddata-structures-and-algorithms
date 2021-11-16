@@ -129,6 +129,24 @@ class Graph {
         return 0;
     }
 
+
+     public Set<String> depthFirst(String root) {
+        Set<String> visited = new LinkedHashSet<>();
+        Stack<String> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            String vertex = stack.pop();
+            if (!visited.contains(vertex)) {
+                visited.add(vertex);
+
+                for (Vertex v : getNeighbors(vertex)) {
+                    stack.push( v.label);
+                }
+            }
+        }
+        return visited;
+    }
+
     String printGraph() {
         if (adjVertices.isEmpty()) {
             return null;
