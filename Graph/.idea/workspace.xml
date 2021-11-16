@@ -46,7 +46,7 @@
       <recent name="C:\Users\Student\401Java\ddata-structures-and-algorithms\graph" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GraphTest">
+  <component name="RunManager" selected="Application.Library">
     <configuration name="Library" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="graph.Library" />
       <module name="graph.lib.main" />
@@ -98,8 +98,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GraphTest" />
         <item itemvalue="Application.Library" />
+        <item itemvalue="JUnit.GraphTest" />
         <item itemvalue="Gradle.GraphTest" />
       </list>
     </recent_temporary>
@@ -126,5 +126,19 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/lib/src/main/java/graph/Graph.java</url>
+          <line>132</line>
+          <properties class="graph.Graph" method="depthFirst">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

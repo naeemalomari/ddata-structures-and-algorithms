@@ -130,11 +130,10 @@ class Graph {
     }
 
 
-    Set<String> depthFirst(String root) {
+     public Set<String> depthFirst(String root) {
         Set<String> visited = new LinkedHashSet<>();
         Stack<String> stack = new Stack<>();
         stack.push(root);
-
         while (!stack.isEmpty()) {
             String vertex = stack.pop();
             if (!visited.contains(vertex)) {
@@ -145,7 +144,6 @@ class Graph {
                 }
             }
         }
-
         return visited;
     }
 
