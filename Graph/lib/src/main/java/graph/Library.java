@@ -83,6 +83,19 @@ public class Library {
         graph3.addEdge("F", "H");
 
         System.out.println("Depth first ---> " + graph3.depthFirst("A"));
+////////////////////////////////38////////////////////////////////
+
+Graph graph4 =new  Graph();
+
+        int[][] list = {{0, 1, 0},
+                {1, 0, 1},
+                {0, 1, 0}};
+
+     graph4.adjacencyListRepresentation(list);
+        System.out.println(graph4.adjacencyListRepresentation(list));
+
+        graph2.isExist("Pandora", "Naboo", graph2);
+        System.out.println(    graph2.isExist("Pandora", "hi", graph2));
 
     }
 }
