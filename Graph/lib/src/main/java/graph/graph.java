@@ -147,6 +147,75 @@ class Graph {
         return visited;
     }
 
+    public  String adjacencyListRepresentation(int[][] matrix) {
+        if (matrix.length == 0)
+            return "The matrix is empty";
+        List<List<String>> adjacencyList = new ArrayList<>(matrix[0].length);
+        char letter;
+        //It will create indexes for the vertices
+        for (int i : matrix[0]) {
+            adjacencyList.add(new ArrayList<>(i));
+        }
+        System.out.println(adjacencyList);
+
+
+        for (int i = 0; i < matrix[0].length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                //if it is edge
+                if (matrix[i][j] == 1) {
+                    letter = (char) ((int) 'a' + j);
+                    adjacencyList.get(i).add(String.valueOf(letter));
+                }
+
+            }
+        }
+        System.out.println(adjacencyList);
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < adjacencyList.size(); i++) {
+            letter = (char) ((int) 'a' + i);
+            stringBuilder.append(letter).append("|");
+            for (String edge : adjacencyList.get(i)) {
+                stringBuilder.append(" -> ").append(edge);
+
+            }
+            stringBuilder.append("\n");
+        }
+        return stringBuilder.toString();
+    }
+
+
+    boolean isExist(String A, String B, Graph graph){
+
+        Set<String> visited = new LinkedHashSet();
+        Queue<String> queue = new LinkedList();
+        queue.add(A);
+        visited.add(A);
+
+        while(!queue.isEmpty()  ) {
+            String vertex = (String)queue.poll();
+            Iterator var6 = graph.getAdjVertices(vertex).iterator();
+
+            while(var6.hasNext()) {
+                Vertex v = (Vertex)var6.next();
+                if (!visited.contains(v.label)) {
+                    visited.add(v.label);
+                    queue.add(v.label);
+                }
+                if (visited.contains(B)){
+                    return true;
+                }
+            }
+        }
+
+        return false;
+
+    }
+
+    private List<Vertex> getAdjVertices(String data) {
+        return (List)this.adjVertices.get(new Vertex(data));
+    }
+
     String printGraph() {
         if (adjVertices.isEmpty()) {
             return null;

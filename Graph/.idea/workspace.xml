@@ -132,11 +132,11 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/lib/src/main/java/graph/Graph.java</url>
-          <line>132</line>
-          <properties class="graph.Graph" method="depthFirst">
+          <line>187</line>
+          <properties class="graph.Graph" method="isExist">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
