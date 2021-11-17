@@ -34,8 +34,12 @@ public class Library {
         graph2.addNode("Monstropolis");
         graph2.addNode("Narnia");
         graph2.addNode("Naboo");
+        graph2.addNode("JORDAN");
+        graph2.addNode("IRBID");
 
         graph2.addEdgeWithWeight("Pandora", "Arendelle", 150);
+            graph2.addEdgeWithWeight("Metroville", "IRBID", 750);
+        graph2.addEdgeWithWeight("Narnia", "JORDAN", 1000);
         graph2.addEdgeWithWeight("Pandora", "Metroville", 82);
         graph2.addEdgeWithWeight("Arendelle", "Metroville",99);
         graph2.addEdgeWithWeight("Arendelle", "Monstropolis",42);
@@ -94,8 +98,8 @@ Graph graph4 =new  Graph();
      graph4.adjacencyListRepresentation(list);
         System.out.println(graph4.adjacencyListRepresentation(list));
 
-        graph2.isExist("Pandora", "Naboo", graph2);
-        System.out.println(    graph2.isExist("Pandora", "hi", graph2));
+//        graph2.isExist("Pandora", "Naboo", graph2);
+        System.out.println(    graph2.isExist("Monstropolis", "IRBID", graph2));
 
     }
 }

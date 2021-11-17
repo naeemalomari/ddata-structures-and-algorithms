@@ -131,7 +131,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/lib/src/main/java/graph/Graph.java</url>
+          <url>file://$PROJECT_DIR$/lib/src/main/java/graph/graph.java</url>
           <line>187</line>
           <properties class="graph.Graph" method="isExist">
             <option name="EMULATED" value="true" />
