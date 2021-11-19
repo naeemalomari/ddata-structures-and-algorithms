@@ -73,7 +73,7 @@ class AppTest {
         binaryTreeTest.insert(42);
         binaryTreeTest.insert(75);
         binaryTreeTest.insert(10);
-        binaryTreeTest.orderPost();
+        binaryTreeTest.postOrder();
         assertEquals("BinarySearchTree{root=BinaryNode{data=12, left=BinaryNode{data=11, left=BinaryNode{data=7, left=null, right=BinaryNode{data=9, left=null, right=BinaryNode{data=10, left=null, right=null}}}, right=null}, right=BinaryNode{data=15, left=null, right=BinaryNode{data=42, left=null, right=BinaryNode{data=75, left=null, right=null}}}}}", binaryTreeTest.toString());
 
     }

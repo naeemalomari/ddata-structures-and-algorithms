@@ -11,25 +11,27 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
     int sum = 0;
 
     /////////////////////////////////INORDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-    public void inorderTraversal() {
-        if (isEmpty()) {
-            return;
-        }
 
-        traverseInorder(root);
+    public ArrayList<T> inorderTraversal() {
+        if (isEmpty()) {
+            return null;
+        }
+        ArrayList<T> inOrderList = new ArrayList<>();
+        traverseInorder(root, inOrderList);
+        return inOrderList;
     }
 
-    private void traverseInorder(BinaryTreeNode<T> root) {
-        if (root.getLeftNode() != null) {
-            traverseInorder(root.getLeftNode());
-        }
+    private void traverseInorder(BinaryTreeNode<T> root, ArrayList<T> inOrderList) {
+        if (root == null) return;
 
-        System.out.print(root.getData() + " -> ");
+        if (root.getLeftNode() != null) {
+            traverseInorder(root.getLeftNode(), inOrderList);
+        }
+        inOrderList.add(root.getData());
 
         if (root.getRightNode() != null) {
-            traverseInorder(root.getRightNode());
+            traverseInorder(root.getRightNode(), inOrderList);
         }
-
     }
 
     /////////////////////////////////////////////////////////////////INSERT///////////////////////////////////////
@@ -74,27 +76,28 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
     }
 
     ////////////////////////////////////////////////////postOrder\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-    public ArrayList<T> orderPost() {
+
+    public ArrayList<T> postOrder() {
         if (isEmpty()) {
             return null;
         }
-        ArrayList<T> listPost = new ArrayList<>();
-        postOrder(root, listPost);
-        return listPost;
+        ArrayList<T> postOrderList = new ArrayList<>();
+        traversePostorder(root, postOrderList);
+        return postOrderList;
     }
 
-    public void postOrder(BinaryTreeNode<T> root, ArrayList<T> listPost) {
+    private void traversePostorder(BinaryTreeNode<T> root, ArrayList<T> postOrderList) {
 
-        if (root == null) {
-            return;
+        if (root.getLeftNode() != null) {
+            traversePostorder(root.getLeftNode(), postOrderList);
         }
-        postOrder(root.getLeftNode(), listPost);
-        postOrder(root.getRightNode(), listPost);
-        System.out.print(root.getData() + " -> ");
+        if (root.getRightNode() != null) {
+            traversePostorder(root.getRightNode(), postOrderList);
+        }
+        postOrderList.add(root.getData());
     }
 
-
-
+////////////////////////////////////////////////////////////////////////////////
 
 
     public int numberOfFile(BinaryTreeNode<T> tree1) {
@@ -114,16 +117,16 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
 
     public boolean compare(BinarySearchTree<T> tree1, BinarySearchTree<T> tree2) {
 
-        int number1 = numberOfFile(tree1.getRoot()) ;
+        int number1 = numberOfFile(tree1.getRoot());
         System.out.println(number1);
-        sum=0;
-        int number2 = numberOfFile(tree2.getRoot()) ;
+        sum = 0;
+        int number2 = numberOfFile(tree2.getRoot());
         System.out.println(number2);
-        sum=0;
-        return number1==number2;
+        sum = 0;
+        return number1 == number2;
     }
 
-
+//
 //    public int sumOfOdd() {
 //        if (isEmpty()) {
 //            return 0;
@@ -194,6 +197,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         }
         return result;
     }
+///////////////////////////BreadthFirst /////// LEVEL ORDER ////////////
 
     public ArrayList<T> levelOrder(BinarySearchTree<T> binaryNode) {
 
@@ -201,18 +205,18 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
             return null;
         }
         ArrayList<T> list = new ArrayList<>();
-        Queue<BinaryTreeNode<T>> teeQueue = new LinkedList<>();
+        Queue<BinaryTreeNode<T>> treeQueue = new LinkedList<>();
         BinaryTreeNode<T> newNode = root;
-        teeQueue.add(root);
-        while (!teeQueue.isEmpty()) {
+        treeQueue.add(root);
+        while (!treeQueue.isEmpty()) {
             //dequeue
-            BinaryTreeNode<T> node = teeQueue.remove();
+            BinaryTreeNode<T> node = treeQueue.remove();
             list.add(node.getData());
             if (node.getLeftNode() != null) {
-                teeQueue.add(node.getLeftNode());
+                treeQueue.add(node.getLeftNode());
             }
             if (node.getRightNode() != null) {
-                teeQueue.add(node.getRightNode());
+                treeQueue.add(node.getRightNode());
 
             }
         }
