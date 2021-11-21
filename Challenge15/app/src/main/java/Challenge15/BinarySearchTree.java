@@ -12,7 +12,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
 
     /////////////////////////////////INORDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-    public ArrayList<T> inorderTraversal() {
+    public ArrayList<T> inorderTraversal() { //Left-Root-Right
         if (isEmpty()) {
             return null;
         }
@@ -42,7 +42,6 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
             insertHelper(data, root);
         }
     }
-
     private void insertHelper(T data, BinaryTreeNode<T> root) {
         BinaryTreeNode<T> binaryTreeNode = new BinaryTreeNode<>(data);
         if (data.compareTo(root.getData()) < 0) {
@@ -77,7 +76,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
 
     ////////////////////////////////////////////////////postOrder\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-    public ArrayList<T> postOrder() {
+    public ArrayList<T> postOrder() { // Left-Right-Root
         if (isEmpty()) {
             return null;
         }
@@ -144,7 +143,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
 //    }
 
     //////////////////////////////////////////////////////////////PRE--ORDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-    public ArrayList<T> preOder200() {
+    public ArrayList<T> preOder200() {// Root-Left-Right
         if (isEmpty()) {
             return null;
         }
@@ -205,7 +204,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
             return null;
         }
         ArrayList<T> list = new ArrayList<>();
-        Queue<BinaryTreeNode<T>> treeQueue = new LinkedList<>();
+        Queue<BinaryTreeNode<T>> treeQueue = new LinkedList<>(); // because queue is an interface.
         BinaryTreeNode<T> newNode = root;
         treeQueue.add(root);
         while (!treeQueue.isEmpty()) {
