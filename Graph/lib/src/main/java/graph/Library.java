@@ -4,110 +4,138 @@
 package graph;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Library {
+
     public static void main(String[] args) {
-        Graph graph = new Graph();
-        graph.addNode("hi");
-        graph.addNode("my");
-        graph.addNode("name");
-        graph.addNode("is");
-        graph.addNode("slim");
-        graph.addNode("shady");
-        graph.addNode("shady11");
-        System.out.println(graph.printGraph());
-
-        graph.addEdge("hi", "my");
-        graph.addEdge("my", "name");
-        graph.addEdge("is", "slim");
-        graph.addEdge("shady", "hi");
-        graph.removeEdge("shady", "hi");
-        graph.removeVertex("shady11");
-        System.out.println(graph.printGraph());
-////////////////////////// code challenge 37 ////////////
-        Graph graph2 = new Graph();
-
-        graph2.addNode("Pandora");
-        graph2.addNode("Arendelle");
-        graph2.addNode("Metroville");
-        graph2.addNode("Monstropolis");
-        graph2.addNode("Narnia");
-        graph2.addNode("Naboo");
-        graph2.addNode("JORDAN");
-        graph2.addNode("IRBID");
-        graph2.addNode("BARBADOS");
-
-        graph2.addEdgeWithWeight("Pandora", "Arendelle", 150);
-            graph2.addEdgeWithWeight("Metroville", "IRBID", 750);
-        graph2.addEdgeWithWeight("Narnia", "JORDAN", 1000);
-        graph2.addEdgeWithWeight("Pandora", "Metroville", 82);
-        graph2.addEdgeWithWeight("Pandora", "BARBADOS", 82);
-        graph2.addEdgeWithWeight("Arendelle", "Metroville",99);
-        graph2.addEdgeWithWeight("Arendelle", "Monstropolis",42);
-        graph2.addEdgeWithWeight("Metroville", "Narnia",37);
-        graph2.addEdgeWithWeight("Metroville", "Naboo",26);
-        graph2.addEdgeWithWeight("Metroville", "Monstropolis",105);
-        graph2.addEdgeWithWeight("Monstropolis", "Naboo",73);
-        graph2.addEdgeWithWeight("Narnia", "Naboo",250);
-
-        List<String> cities = new ArrayList<>();
-        cities.add("Pandora");
-        cities.add("Arendelle");
-        cities.add("Metroville");
-
-        List<String> cities1 = new ArrayList<>();
-        cities1.add("Pandora");
-        cities1.add("Naboo");
-        cities1.add("Metroville");
 
 
-        System.out.println("First Trip ---> " + graph2.businessTrip(graph2, cities));
-        System.out.println("Second Trip ---> " + graph2.businessTrip(graph2, cities1));
+        System.out.println(IdentifyAnagrams("fried", "fired"));
 
+//        Graph graph = new Graph();
+//        graph.addNode("hi");
+//        graph.addNode("my");
+//        graph.addNode("name");
+//        graph.addNode("is");
+//        graph.addNode("slim");
+//        graph.addNode("shady");
+//        graph.addNode("shady11");
+//        System.out.println(graph.printGraph());
+//
+//        graph.addEdge("hi", "my");
+//        graph.addEdge("my", "name");
+//        graph.addEdge("is", "slim");
+//        graph.addEdge("shady", "hi");
+//        graph.removeEdge("shady", "hi");
+//        graph.removeVertex("shady11");
+//        System.out.println(graph.printGraph());
+//////////////////////////// code challenge 37 ////////////
+//        Graph graph2 = new Graph();
+//
+//        graph2.addNode("Pandora");
+//        graph2.addNode("Arendelle");
+//        graph2.addNode("Metroville");
+//        graph2.addNode("Monstropolis");
+//        graph2.addNode("Narnia");
+//        graph2.addNode("Naboo");
+//        graph2.addNode("JORDAN");
+//        graph2.addNode("IRBID");
+//        graph2.addNode("BARBADOS");
+//
+//        graph2.addEdgeWithWeight("Pandora", "Arendelle", 150);
+//            graph2.addEdgeWithWeight("Metroville", "IRBID", 750);
+//        graph2.addEdgeWithWeight("Narnia", "JORDAN", 1000);
+//        graph2.addEdgeWithWeight("Pandora", "Metroville", 82);
+//        graph2.addEdgeWithWeight("Pandora", "BARBADOS", 82);
+//        graph2.addEdgeWithWeight("Arendelle", "Metroville",99);
+//        graph2.addEdgeWithWeight("Arendelle", "Monstropolis",42);
+//        graph2.addEdgeWithWeight("Metroville", "Narnia",37);
+//        graph2.addEdgeWithWeight("Metroville", "Naboo",26);
+//        graph2.addEdgeWithWeight("Metroville", "Monstropolis",105);
+//        graph2.addEdgeWithWeight("Monstropolis", "Naboo",73);
+//        graph2.addEdgeWithWeight("Narnia", "Naboo",250);
+//
+//        List<String> cities = new ArrayList<>();
+//        cities.add("Pandora");
+//        cities.add("Arendelle");
+//        cities.add("Metroville");
+//
+//        List<String> cities1 = new ArrayList<>();
+//        cities1.add("Pandora");
+//        cities1.add("Naboo");
+//        cities1.add("Metroville");
+//
+//
+//        System.out.println("First Trip ---> " + graph2.businessTrip(graph2, cities));
+//        System.out.println("Second Trip ---> " + graph2.businessTrip(graph2, cities1));
+//
+//
+//
+//
+//        Graph graph3 = new Graph();
+//        graph3.addNode("A");
+//        graph3.addNode("B");
+//        graph3.addNode("C");
+//        graph3.addNode("D");
+//        graph3.addNode("E");
+//        graph3.addNode("F");
+//        graph3.addNode("G");
+//        graph3.addNode("H");
+//
+//        graph3.addEdge("A", "D");
+//        graph3.addEdge("A", "B");
+//        graph3.addEdge("B", "D");
+//        graph3.addEdge("B", "C");
+//        graph3.addEdge("C", "G");
+//        graph3.addEdge("D", "F");
+//        graph3.addEdge("D", "H");
+//        graph3.addEdge("D", "E");
+//        graph3.addEdge("F", "H");
+//
+//        System.out.println("Depth first ---> " + graph3.depthFirst("A"));
+//////////////////////////////////38////////////////////////////////
+//
+//Graph graph4 =new  Graph();
+//
+//        int[][] list = {{0, 1, 0},
+//                {1, 0, 1},
+//                {0, 1, 0}};
+//
+//     graph4.adjacencyListRepresentation(list);
+//        System.out.println(graph4.adjacencyListRepresentation(list));
+//
+////        graph2.isExist("Pandora", "Naboo", graph2);
+//
+//
+//
+//
+//
+//
+//        System.out.println(graph2.isExist("Monstropolis", "BARBADOS", graph2));
 
+    }
 
+    static boolean IdentifyAnagrams(String str1, String str2) {
+        char[] str1Array = str1.replaceAll("\\s", "").toLowerCase().toCharArray();
+        char[] str2Array = str2.replaceAll("\\s", "").toLowerCase().toCharArray();
 
-        Graph graph3 = new Graph();
-        graph3.addNode("A");
-        graph3.addNode("B");
-        graph3.addNode("C");
-        graph3.addNode("D");
-        graph3.addNode("E");
-        graph3.addNode("F");
-        graph3.addNode("G");
-        graph3.addNode("H");
+        if (str1Array.length != str2Array.length) {
+            return false;
+        }
+        HashMap<Character, Integer> hashMap1 = new HashMap<>();
+        HashMap<Character, Integer> hashMap2 = new HashMap<>();
+        for (int i = 0; i < str1.length(); i++) {
+            hashMap1.put(str1Array[i], 0);
+            hashMap2.put(str2Array[i], 0);
+        }
+        System.out.println(hashMap1);
+        System.out.println();
+        System.out.println(hashMap2);
 
-        graph3.addEdge("A", "D");
-        graph3.addEdge("A", "B");
-        graph3.addEdge("B", "D");
-        graph3.addEdge("B", "C");
-        graph3.addEdge("C", "G");
-        graph3.addEdge("D", "F");
-        graph3.addEdge("D", "H");
-        graph3.addEdge("D", "E");
-        graph3.addEdge("F", "H");
-
-        System.out.println("Depth first ---> " + graph3.depthFirst("A"));
-////////////////////////////////38////////////////////////////////
-
-Graph graph4 =new  Graph();
-
-        int[][] list = {{0, 1, 0},
-                {1, 0, 1},
-                {0, 1, 0}};
-
-     graph4.adjacencyListRepresentation(list);
-        System.out.println(graph4.adjacencyListRepresentation(list));
-
-//        graph2.isExist("Pandora", "Naboo", graph2);
-
-
-
-
-
-
-        System.out.println(graph2.isExist("Monstropolis", "BARBADOS", graph2));
-
+        return hashMap1.equals(hashMap2);
+//        In simple words, == checks if both objects point to the same memory location
+//        whereas . equals() evaluates to the comparison of values in the objects.
     }
 }

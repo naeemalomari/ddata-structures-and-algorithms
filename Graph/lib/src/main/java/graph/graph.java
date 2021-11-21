@@ -3,7 +3,7 @@ package graph;
 import java.util.*;
 
 class Graph {
-    private final Map<Vertex, List<Vertex>> adjVertices;
+    public final Map<Vertex, List<Vertex>> adjVertices;
 
     Graph() {
         adjVertices = new HashMap<>();
@@ -235,4 +235,6 @@ class Graph {
     int size() {
         return adjVertices.size();
     }
+
+
 }
