@@ -17,22 +17,22 @@ public class App {
 //        BinarySearchTree<Integer> binarySearchContains = new BinarySearchTree<>();
 //        binarySearchContains.insert(77);
 //        binarySearchContains.insert(8);
+//        binarySearchContains.insert(7);
+//        binarySearchContains.insert(6);
+//        binarySearchContains.insert(5);
+//        binarySearchContains.insert(4);
 //        binarySearchContains.insert(100);
 //        binarySearchContains.insert(4);
 //        binarySearchContains.insert(16);
 //        binarySearchContains.insert(15);
-//        binarySearchContains.insert(27);
-//        binarySearchContains.insert(85);
-//        binarySearchContains.insert(66);
-//        binarySearchContains.insert(90);
-//        binarySearchContains.insert(150);
-
-//        System.out.println(binarySearchContains.contains(1));
-//        System.out.println(binarySearchContains);
 //
+//
+//        System.out.println(binarySearchContains.contains(100));
+//        System.out.println(binarySearchContains);
+
 //        System.out.println(binarySearchContains.preOder200());
 //        System.out.println("");
-
+//
 //        System.out.println(binarySearchContains.postOrder());
 //        System.out.println( binarySearchContains.inorderTraversal());
 //        binarySearchContains.postOrder();
@@ -80,13 +80,14 @@ public class App {
         binaryBreadthTree1.insert(15);
         binaryBreadthTree1.insert(12);
         binaryBreadthTree1.insert(16);
+        binaryBreadthTree1.insert(17);
 
-        System.out.println(binaryBreadthTree.inorder1());
+
         System.out.println(binaryBreadthTree.mergeTrees(binaryBreadthTree.root,binaryBreadthTree1.root));
 //        ArrayList<Integer> list ;
 //        list = binaryBreadthTree.levelOrder(binaryBreadthTree);
 //        System.out.println(list);
-        System.out.println(binaryBreadthTree.PreorderTraversal());
+//        System.out.println(binaryBreadthTree.PreorderTraversal());
 //        BinarySearchTree.CompareDirectoriesFilesNum(binaryBreadthTree,binarySearchTreeMax );
 //        System.out.println(binarySearchTree2.compareTo(binarySearchContains));
 //        System.out.println(binaryBreadthTree.compare(binaryBreadthTree,binarySearchTreeMax));

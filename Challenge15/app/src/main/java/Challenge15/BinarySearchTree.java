@@ -46,7 +46,6 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
             insertHelper(data, root);
         }
     }
-
     private void insertHelper(T data, BinaryTreeNode<T> root) {
         BinaryTreeNode<T> binaryTreeNode = new BinaryTreeNode<>(data);
         if (data.compareTo(root.getData()) < 0) {
@@ -68,6 +67,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
     public boolean contains(T data) {
         BinaryTreeNode<T> binaryTreeNode1 = root;
 
+        if(isEmpty()) return false;
         while (binaryTreeNode1 != null) {
             if (data.compareTo(binaryTreeNode1.getData()) > 0)
                 binaryTreeNode1 = binaryTreeNode1.getRightNode();
@@ -274,7 +274,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
             return t2;
         if (t2 == null)
             return t1;
-        t1.data += t2.data;
+       t1.data = t1.data + t2.data;
         t1.leftNode = mergeTrees(t1.getLeftNode(), t2.getLeftNode());
         t1.rightNode = mergeTrees(t1.getRightNode(), t2.getRightNode());
 
