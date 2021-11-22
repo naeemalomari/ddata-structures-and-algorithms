@@ -72,10 +72,21 @@ public class App {
         binaryBreadthTree.insert(15);
         binaryBreadthTree.insert(12);
         binaryBreadthTree.insert(16);
+ BinarySearchTree<Integer> binaryBreadthTree1 = new BinarySearchTree<>();
+        binaryBreadthTree1.insert(20);
+        binaryBreadthTree1.insert(50);
+        binaryBreadthTree1.insert(40);
+        binaryBreadthTree1.insert(100);
+        binaryBreadthTree1.insert(15);
+        binaryBreadthTree1.insert(12);
+        binaryBreadthTree1.insert(16);
 
-        ArrayList<Integer> list ;
-        list = binaryBreadthTree.levelOrder(binaryBreadthTree);
-        System.out.println(list);
+        System.out.println(binaryBreadthTree.inorder1());
+        System.out.println(binaryBreadthTree.mergeTrees(binaryBreadthTree.root,binaryBreadthTree1.root));
+//        ArrayList<Integer> list ;
+//        list = binaryBreadthTree.levelOrder(binaryBreadthTree);
+//        System.out.println(list);
+        System.out.println(binaryBreadthTree.PreorderTraversal());
 //        BinarySearchTree.CompareDirectoriesFilesNum(binaryBreadthTree,binarySearchTreeMax );
 //        System.out.println(binarySearchTree2.compareTo(binarySearchContains));
 //        System.out.println(binaryBreadthTree.compare(binaryBreadthTree,binarySearchTreeMax));

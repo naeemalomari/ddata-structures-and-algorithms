@@ -1,10 +1,10 @@
 package Challenge15;
 
 public class BinaryTreeNode<T> {
-    private T data;
+    public T data;
 
-    private BinaryTreeNode<T> leftNode;
-    private BinaryTreeNode<T> rightNode;
+    public BinaryTreeNode<T> leftNode;
+    public BinaryTreeNode<T> rightNode;
 
     public BinaryTreeNode(T data) {
         this.data = data;

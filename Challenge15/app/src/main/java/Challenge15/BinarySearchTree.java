@@ -2,6 +2,8 @@ package Challenge15;
 
 
 import com.sun.source.tree.BinaryTree;
+import ktree.TreeNode;
+import org.checkerframework.checker.units.qual.A;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -44,6 +46,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
             insertHelper(data, root);
         }
     }
+
     private void insertHelper(T data, BinaryTreeNode<T> root) {
         BinaryTreeNode<T> binaryTreeNode = new BinaryTreeNode<>(data);
         if (data.compareTo(root.getData()) < 0) {
@@ -207,7 +210,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         }
         ArrayList<T> list = new ArrayList<>();
         Queue<BinaryTreeNode<T>> treeQueue = new LinkedList<>(); // because queue is an interface.
-        BinaryTreeNode<T> newNode = root;
+//        BinaryTreeNode<T> newNode = root;
         treeQueue.add(root);
         while (!treeQueue.isEmpty()) {
             //dequeue
@@ -218,14 +221,85 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
             }
             if (node.getRightNode() != null) {
                 treeQueue.add(node.getRightNode());
-
             }
         }
         return list;
     }
 
+    ///////////////////////////////SUM OF ROOTS/////////////////////
+    public int PreorderTraversal() {
+        if (isEmpty()) {
+            return 0;
+        }
+
+        sumRoots(root);
+        return sum;
+    }
+
+    private void sumRoots(BinaryTreeNode<T> root) {
+        if (root.getLeftNode() == null && root.getRightNode() == null) {
+            return;
+        }
+        sum = sum + (Integer) root.getData();
+        System.out.print(root.getData() + " -> ");
+        if (root.getLeftNode() != null) {
+            sumRoots(root.getLeftNode());
+        }
+
+        if (root.getRightNode() != null) {
+            sumRoots(root.getRightNode());
+        }
+    }
+///////////////////////////////////////SYMMETRIC/////////////////////////////
+
+    public boolean isSymmetric(BinaryTreeNode<T> root) {
+
+        return isMirror(root, root);
+    }
+
+    public boolean isMirror(BinaryTreeNode<T> p, BinaryTreeNode<T> q) {
+
+        if (p == null && q == null) return true;
+        if (p == null || q == null) return false;
+
+        return (p.getData() == q.getData())
+                && isMirror(p.getRightNode(), q.getLeftNode())
+                && isMirror(p.getLeftNode(), q.getRightNode());
+    }
+////////////////////////////////////////////////////////////
+
+    public BinaryTreeNode<Integer> mergeTrees(BinaryTreeNode<Integer> t1, BinaryTreeNode<Integer> t2) {
+
+        if (t1 == null)
+            return t2;
+        if (t2 == null)
+            return t1;
+        t1.data += t2.data;
+        t1.leftNode = mergeTrees(t1.getLeftNode(), t2.getLeftNode());
+        t1.rightNode = mergeTrees(t1.getRightNode(), t2.getRightNode());
+
+        return t1;
+    }
+
+    /////////////////////////////////////////////////////////
+// 8- inverting Tree
+    public BinaryTreeNode<T> invertTree(BinaryTreeNode<T> root) {
+        if (root == null) {
+            return root;
+        }
+        invertTree(root.getLeftNode());
+        invertTree(root.getRightNode());
+
+        BinaryTreeNode<T> t = root.getLeftNode();
+        root.setLeftNode(root.getRightNode());
+        root.setRightNode(t);
+
+        return root;
+    }
+
 
     ////////////////////////////////////////////////////////////////////////////
+
     public boolean isEmpty() {
         return root == null;
     }
