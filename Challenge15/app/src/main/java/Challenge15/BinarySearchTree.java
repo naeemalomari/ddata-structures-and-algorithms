@@ -46,6 +46,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
             insertHelper(data, root);
         }
     }
+
     private void insertHelper(T data, BinaryTreeNode<T> root) {
         BinaryTreeNode<T> binaryTreeNode = new BinaryTreeNode<>(data);
         if (data.compareTo(root.getData()) < 0) {
@@ -67,7 +68,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
     public boolean contains(T data) {
         BinaryTreeNode<T> binaryTreeNode1 = root;
 
-        if(isEmpty()) return false;
+        if (isEmpty()) return false;
         while (binaryTreeNode1 != null) {
             if (data.compareTo(binaryTreeNode1.getData()) > 0)
                 binaryTreeNode1 = binaryTreeNode1.getRightNode();
@@ -257,14 +258,14 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         return isMirror(root, root);
     }
 
-    public boolean isMirror(BinaryTreeNode<T> p, BinaryTreeNode<T> q) {
+    public boolean isMirror(BinaryTreeNode<T> t1, BinaryTreeNode<T> t2) {
 
-        if (p == null && q == null) return true;
-        if (p == null || q == null) return false;
+        if (t1 == null && t2 == null) return true;
+        if (t1 == null || t2 == null) return false;
 
-        return (p.getData() == q.getData())
-                && isMirror(p.getRightNode(), q.getLeftNode())
-                && isMirror(p.getLeftNode(), q.getRightNode());
+        return (t1.getData() == t2.getData())
+                && isMirror(t1.getRightNode(), t2.getLeftNode())
+                && isMirror(t1.getLeftNode(), t2.getRightNode());
     }
 ////////////////////////////////////////////////////////////
 
@@ -274,9 +275,10 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
             return t2;
         if (t2 == null)
             return t1;
-       t1.data = t1.data + t2.data;
+        t1.data = t1.data + t2.data;
         t1.leftNode = mergeTrees(t1.getLeftNode(), t2.getLeftNode());
         t1.rightNode = mergeTrees(t1.getRightNode(), t2.getRightNode());
+
 
         return t1;
     }
