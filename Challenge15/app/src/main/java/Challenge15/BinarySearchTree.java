@@ -232,7 +232,6 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         if (isEmpty()) {
             return 0;
         }
-
         sumRoots(root);
         return sum;
     }
@@ -243,6 +242,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         }
         sum = sum + (Integer) root.getData();
         System.out.print(root.getData() + " -> ");
+
         if (root.getLeftNode() != null) {
             sumRoots(root.getLeftNode());
         }
@@ -250,6 +250,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         if (root.getRightNode() != null) {
             sumRoots(root.getRightNode());
         }
+
     }
 ///////////////////////////////////////SYMMETRIC/////////////////////////////
 
@@ -267,6 +268,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
                 && isMirror(t1.getRightNode(), t2.getLeftNode())
                 && isMirror(t1.getLeftNode(), t2.getRightNode());
     }
+
 ////////////////////////////////////////////////////////////
 
     public BinaryTreeNode<Integer> mergeTrees(BinaryTreeNode<Integer> t1, BinaryTreeNode<Integer> t2) {
@@ -299,6 +301,51 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         return root;
     }
 
+    ////////////////////////////////////////count all nodes /////////////////////////
+    public int count(BinaryTreeNode<T> root  ){
+
+        if ( isEmpty())return 0;
+
+        traverse(root);
+        return sum ;
+    }
+    public void traverse(BinaryTreeNode<T> root){
+        if(root.getLeftNode() != null){
+            traverse(root.getLeftNode());
+
+        }
+        System.out.print(root.getData() + " -> ");
+        sum = sum +1;
+        if(root.getRightNode() !=null) {
+            traverse(root.getRightNode());
+
+        }
+    }
+
+    ////////////////////////////////////////SECOND LARGEST ELEMENT////////BINARY TREE + BST///////////////
+    public T secondLargest(BinaryTreeNode<T> root){
+        if(isEmpty()) return null;
+
+        ArrayList<T> second = new ArrayList<>();
+        traverse111(root, second);
+
+        return  second.get(second.size()-2);
+
+    }
+    public void traverse111(BinaryTreeNode<T> root, ArrayList<T> second){
+        if (root == null) return;
+
+        if(root.getLeftNode() != null){
+            traverse111(root.getLeftNode(), second);
+        }
+
+        second.add(root.getData());
+
+        if(root.getRightNode() != null){
+            traverse111(root.getRightNode(), second);
+        }
+    }
+    /////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////////////////////////////////////////////
 

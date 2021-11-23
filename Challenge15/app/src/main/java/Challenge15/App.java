@@ -69,9 +69,13 @@ public class App {
         binaryBreadthTree.insert(50);
         binaryBreadthTree.insert(40);
         binaryBreadthTree.insert(100);
+        binaryBreadthTree.insert(200);
         binaryBreadthTree.insert(15);
         binaryBreadthTree.insert(12);
         binaryBreadthTree.insert(16);
+        binaryBreadthTree.insert(66);
+        binaryBreadthTree.insert(53);
+
  BinarySearchTree<Integer> binaryBreadthTree1 = new BinarySearchTree<>();
         binaryBreadthTree1.insert(20);
         binaryBreadthTree1.insert(50);
@@ -82,8 +86,12 @@ public class App {
         binaryBreadthTree1.insert(16);
         binaryBreadthTree1.insert(17);
 
-
-        System.out.println(binaryBreadthTree.mergeTrees(binaryBreadthTree.root,binaryBreadthTree1.root));
+        var x= binaryBreadthTree.secondLargest(binaryBreadthTree.root);
+        System.out.println(x);
+//        System.out.println(binaryBreadthTree.count(binaryBreadthTree.root));
+//        System.out.println(binaryBreadthTree.isSymmetric(binaryBreadthTree.root));
+//        System.out.println(binaryBreadthTree.PreorderTraversal());
+//        System.out.println(binaryBreadthTree.mergeTrees(binaryBreadthTree.root,binaryBreadthTree1.root));
 //        ArrayList<Integer> list ;
 //        list = binaryBreadthTree.levelOrder(binaryBreadthTree);
 //        System.out.println(list);
