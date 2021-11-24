@@ -4,6 +4,7 @@ package Challenge15;
 import com.sun.source.tree.BinaryTree;
 import ktree.TreeNode;
 import org.checkerframework.checker.units.qual.A;
+import org.w3c.dom.Node;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -281,74 +282,196 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         t1.leftNode = mergeTrees(t1.getLeftNode(), t2.getLeftNode());
         t1.rightNode = mergeTrees(t1.getRightNode(), t2.getRightNode());
 
-
         return t1;
     }
 
     /////////////////////////////////////////////////////////
 // 8- inverting Tree
-    public BinaryTreeNode<T> invertTree(BinaryTreeNode<T> root) {
-        if (root == null) {
-            return root;
-        }
-        invertTree(root.getLeftNode());
-        invertTree(root.getRightNode());
 
-        BinaryTreeNode<T> t = root.getLeftNode();
-        root.setLeftNode(root.getRightNode());
-        root.setRightNode(t);
+    public BinaryTreeNode<T> invertTree(BinaryTreeNode<T> root) {
+        if (root == null)
+            return null;
+        if (root.getLeftNode() == null && root.getRightNode() == null)
+            return root;
+        var left = invertTree(root.getLeftNode());
+        var right = invertTree(root.getRightNode());
+
+        root.setRightNode(left);
+        root.setLeftNode(right);
 
         return root;
     }
 
     ////////////////////////////////////////count all nodes /////////////////////////
-    public int count(BinaryTreeNode<T> root  ){
+    public int count(BinaryTreeNode<T> root) {
 
-        if ( isEmpty())return 0;
+        if (isEmpty()) return 0;
 
         traverse(root);
-        return sum ;
+        return sum;
     }
-    public void traverse(BinaryTreeNode<T> root){
-        if(root.getLeftNode() != null){
+
+    public void traverse(BinaryTreeNode<T> root) {
+        if (root.getLeftNode() != null) {
             traverse(root.getLeftNode());
 
         }
         System.out.print(root.getData() + " -> ");
-        sum = sum +1;
-        if(root.getRightNode() !=null) {
+        sum = sum + 1;
+        if (root.getRightNode() != null) {
             traverse(root.getRightNode());
 
         }
     }
 
     ////////////////////////////////////////SECOND LARGEST ELEMENT////////BINARY TREE + BST///////////////
-    public T secondLargest(BinaryTreeNode<T> root){
-        if(isEmpty()) return null;
+    public T secondLargest(BinaryTreeNode<T> root) {
+        if (isEmpty()) return null;
 
         ArrayList<T> second = new ArrayList<>();
         traverse111(root, second);
 
-        return  second.get(second.size()-2);
-
+        return second.get(second.size() - 2);
     }
-    public void traverse111(BinaryTreeNode<T> root, ArrayList<T> second){
+    public void traverse111(BinaryTreeNode<T> root, ArrayList<T> second) {
         if (root == null) return;
 
-        if(root.getLeftNode() != null){
+        if (root.getLeftNode() != null) {
             traverse111(root.getLeftNode(), second);
         }
-
         second.add(root.getData());
-
-        if(root.getRightNode() != null){
+        if (root.getRightNode() != null) {
             traverse111(root.getRightNode(), second);
         }
     }
+
     /////////////////////////////////////////////////////////////////////////
+    ArrayList<Integer> list = new ArrayList<>();
 
-    ////////////////////////////////////////////////////////////////////////////
+    public BinarySearchTree<Integer> increaseOrder() {
+        if (isEmpty()) {
+            return null;
+        }
+        traverseInorder22(root);
+        System.out.println(list.toString());
+        BinarySearchTree<Integer> inorder = new BinarySearchTree<>();
+        for (int i : list) {
+            System.out.println(i);
+            inorder.insert(i);
+        }
+        return inorder;
+    }
 
+    private void traverseInorder22(BinaryTreeNode<T> root) {
+        if (root.getLeftNode() != null) {
+            traverseInorder22(root.getLeftNode());
+        }
+//    System.out.print(root.getValue() + " -> ");
+        list.add((Integer) root.getData());
+        if (root.getRightNode() != null) {
+            traverseInorder22(root.getRightNode());
+        }
+    }
+
+    /////////////////////////ANOTHER SOLUTION///////////////
+    public BinarySearchTree<Integer> IncreaseOrder() {
+        if (isEmpty()) {
+            return null;
+        }
+        BinarySearchTree<Integer> inorder = new BinarySearchTree<>();
+        traverseInorderaa(root, inorder);
+        return inorder;
+    }
+
+    private void traverseInorderaa(BinaryTreeNode<T> root, BinarySearchTree<Integer> inorder) {
+        if (root.getLeftNode() != null) {
+            traverseInorderaa(root.getLeftNode(), inorder);
+        }
+        inorder.insert((Integer) root.getData());
+
+        if (root.getRightNode() != null) {
+            traverseInorderaa(root.getRightNode(), inorder);
+        }
+    }
+
+    /////////////////////////////////////MAX DEPTH///////////////////////////////////////
+
+    public int maxDepth(BinaryTreeNode<T> root) {
+        if (root == null)
+            return 0;
+        if (root.getLeftNode() == null && root.getRightNode()== null) return 0;
+
+        int leftDepth = maxDepth(root.getLeftNode());
+        int rightDepth = maxDepth(root.getRightNode());
+
+        if (leftDepth > rightDepth)
+            return (leftDepth + 1);
+        else
+            return (rightDepth + 1);
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    boolean hasPathSum(BinaryTreeNode<T> node, int sum) {
+        boolean ans = false;
+        int subSum = sum - (Integer) node.data;
+        if(subSum == 0 && node.getLeftNode() == null && node.getRightNode() == null)
+            return(ans = true);
+        if(node.getLeftNode() != null)
+
+            // ans || hasPathSum... has no utility if the ans is false
+            ans = ans || hasPathSum(node.getLeftNode(), subSum);
+
+        if(node.getRightNode() != null)
+
+            // But if it is true then we can avoid calling hasPathSum
+            // here as answer has already been found
+            ans = ans || hasPathSum(node.getRightNode(), subSum);
+        return(ans);
+    }
+    ///////////////////////////////////////////////////////////////////
+    public int rootToLeaf(BinaryTreeNode<Integer> node, int val) {
+        if (node == null)
+            return 0;
+        val = (val*10 + node.getData());
+        if (node.getLeftNode() == null && node.getRightNode() == null)
+            return val;
+        return rootToLeaf(node.getLeftNode(), val)
+                + rootToLeaf(node.getRightNode(), val);
+    }
+
+    public void rootToLeaf1(BinaryTreeNode<Integer> node, String hi) {
+        if (node == null)
+            return;
+        hi += node.getData()+ "->";
+        if (node.getLeftNode() == null && node.getRightNode() == null) {
+            System.out.println(hi);
+            return;
+        }
+        rootToLeaf1(node.getLeftNode(), hi);
+        rootToLeaf1(node.getRightNode(), hi);
+    }
+    //////////////////////////////////////////RETURNS TREE //////////////////////////////////////////////////////
+   static BinarySearchTree<Integer> fiTree=new BinarySearchTree<>();
+
+    public BinarySearchTree<Integer> root_to_leaf_sums(BinaryTreeNode<Integer> x){
+        if(x==null)
+            return null;
+        root_to_leaf_sums(x,0);
+        return fiTree;
+    }
+    private  void root_to_leaf_sums(BinaryTreeNode<Integer> root,int sum){
+        sum=sum+ root.getData();
+        if(root.getLeftNode()==null&&root.getRightNode()==null){
+            fiTree.insert(sum);
+            return;
+        }
+        if(root.getLeftNode()!=null)
+            root_to_leaf_sums(root.getLeftNode(),sum);
+        if(root.getRightNode()!=null)
+            root_to_leaf_sums(root.getRightNode(),sum);
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     public boolean isEmpty() {
         return root == null;
     }

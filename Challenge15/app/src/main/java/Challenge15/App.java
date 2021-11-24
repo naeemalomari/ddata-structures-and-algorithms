@@ -66,17 +66,24 @@ public class App {
 
         BinarySearchTree<Integer> binaryBreadthTree = new BinarySearchTree<>();
         binaryBreadthTree.insert(20);
-        binaryBreadthTree.insert(50);
+//        binaryBreadthTree.insert(50);
         binaryBreadthTree.insert(40);
-        binaryBreadthTree.insert(100);
-        binaryBreadthTree.insert(200);
-        binaryBreadthTree.insert(15);
-        binaryBreadthTree.insert(12);
-        binaryBreadthTree.insert(16);
-        binaryBreadthTree.insert(66);
-        binaryBreadthTree.insert(53);
-
- BinarySearchTree<Integer> binaryBreadthTree1 = new BinarySearchTree<>();
+//        binaryBreadthTree.insert(100);
+//        binaryBreadthTree.insert(200);
+//        binaryBreadthTree.insert(15);
+//        binaryBreadthTree.insert(12);
+        binaryBreadthTree.insert(6);
+        binaryBreadthTree.insert(5);
+//        binaryBreadthTree.insert(2);
+//        binaryBreadthTree.insert(1);
+//        binaryBreadthTree.insert(0);
+//        binaryBreadthTree.insert(-1);
+//        binaryBreadthTree.insert(16);
+//        binaryBreadthTree.insert(66);
+//        binaryBreadthTree.insert(53);
+//        System.out.println(binaryBreadthTree.IncreaseOrder());
+//        System.out.println(binaryBreadthTree.maxDepth(binaryBreadthTree.root));
+        BinarySearchTree<Integer> binaryBreadthTree1 = new BinarySearchTree<>();
         binaryBreadthTree1.insert(20);
         binaryBreadthTree1.insert(50);
         binaryBreadthTree1.insert(40);
@@ -85,9 +92,28 @@ public class App {
         binaryBreadthTree1.insert(12);
         binaryBreadthTree1.insert(16);
         binaryBreadthTree1.insert(17);
+        System.out.println(binaryBreadthTree1.root_to_leaf_sums(binaryBreadthTree1.root));
 
-        var x= binaryBreadthTree.secondLargest(binaryBreadthTree.root);
-        System.out.println(x);
+
+
+        BinarySearchTree<Integer> binarySearchTree2 = new BinarySearchTree<>();
+        binarySearchTree2.insert(9);
+        binarySearchTree2.insert(8);
+        binarySearchTree2.insert(7);
+        binarySearchTree2.insert(4);
+        binarySearchTree2.insert(3);
+        binarySearchTree2.insert(1);
+        binarySearchTree2.insert(6);
+
+
+
+//        binarySearchTree2.rootToLeaf1(binarySearchTree2.root, "");
+//        System.out.println(binaryBreadthTree.hasPathSum(binaryBreadthTree1.root,110 ));
+
+
+//        var x= binaryBreadthTree.secondLargest(binaryBreadthTree.root);
+//        System.out.println(x);
+//        System.out.println(binaryBreadthTree.invertTree(binaryBreadthTree.root));
 //        System.out.println(binaryBreadthTree.count(binaryBreadthTree.root));
 //        System.out.println(binaryBreadthTree.isSymmetric(binaryBreadthTree.root));
 //        System.out.println(binaryBreadthTree.PreorderTraversal());
@@ -99,9 +125,6 @@ public class App {
 //        BinarySearchTree.CompareDirectoriesFilesNum(binaryBreadthTree,binarySearchTreeMax );
 //        System.out.println(binarySearchTree2.compareTo(binarySearchContains));
 //        System.out.println(binaryBreadthTree.compare(binaryBreadthTree,binarySearchTreeMax));
-
-
-
 
 
 //        KTree kTree = new KTree(1);
@@ -116,4 +139,4 @@ public class App {
 //        System.out.println(kTree.fizzBuzzTree(kTree));
 
     }
-    }
+}
