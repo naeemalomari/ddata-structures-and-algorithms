@@ -4,8 +4,10 @@ package Challenge15;
 import com.sun.source.tree.BinaryTree;
 import ktree.TreeNode;
 import org.checkerframework.checker.units.qual.A;
+import org.checkerframework.common.value.qual.IntRangeFromGTENegativeOne;
 import org.w3c.dom.Node;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -269,7 +271,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
                 && isMirror(t1.getLeftNode(), t2.getRightNode());
     }
 
-////////////////////////////////////////////////////////////
+//////////////////////////////////////MERGE TREES //////////////////////
 
     public BinaryTreeNode<Integer> mergeTrees(BinaryTreeNode<Integer> t1, BinaryTreeNode<Integer> t2) {
 
@@ -323,26 +325,6 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         }
     }
 
-    ////////////////////////////////////////SECOND LARGEST ELEMENT////////BINARY TREE + BST///////////////
-    public T secondLargest(BinaryTreeNode<T> root) {
-        if (isEmpty()) return null;
-
-        ArrayList<T> second = new ArrayList<>();
-        traverse111(root, second);
-
-        return second.get(second.size() - 2);
-    }
-    public void traverse111(BinaryTreeNode<T> root, ArrayList<T> second) {
-        if (root == null) return;
-
-        if (root.getLeftNode() != null) {
-            traverse111(root.getLeftNode(), second);
-        }
-        second.add(root.getData());
-        if (root.getRightNode() != null) {
-            traverse111(root.getRightNode(), second);
-        }
-    }
 
     /////////////////////////////////////////////////////////////////////////
     ArrayList<Integer> list = new ArrayList<>();
@@ -398,7 +380,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
     public int maxDepth(BinaryTreeNode<T> root) {
         if (root == null)
             return 0;
-        if (root.getLeftNode() == null && root.getRightNode()== null) return 0;
+        if (root.getLeftNode() == null && root.getRightNode() == null) return 0;
 
         int leftDepth = maxDepth(root.getLeftNode());
         int rightDepth = maxDepth(root.getRightNode());
@@ -414,78 +396,107 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
     boolean hasPathSum(BinaryTreeNode<T> node, int sum) {
         boolean ans = false;
         int subSum = sum - (Integer) node.data;
-        if(subSum == 0 && node.getLeftNode() == null && node.getRightNode() == null)
-            return(ans = true);
-        if(node.getLeftNode() != null)
+        if (subSum == 0 && node.getLeftNode() == null && node.getRightNode() == null)
+            return (ans = true);
+        if (node.getLeftNode() != null)
 
             // ans || hasPathSum... has no utility if the ans is false
             ans = ans || hasPathSum(node.getLeftNode(), subSum);
 
-        if(node.getRightNode() != null)
+        if (node.getRightNode() != null)
 
             // But if it is true then we can avoid calling hasPathSum
             // here as answer has already been found
             ans = ans || hasPathSum(node.getRightNode(), subSum);
-        return(ans);
+        return (ans);
     }
+
+    ////////////////////////////////////////SECOND LARGEST ELEMENT////////BINARY TREE + BST///////////////
+    public T secondLargest(BinaryTreeNode<T> root) {
+        if (isEmpty()) return null;
+
+        ArrayList<T> second = new ArrayList<>();
+        traverse111(root, second);
+
+        return second.get(second.size() - 2);
+    }
+
+    public void traverse111(BinaryTreeNode<T> root, ArrayList<T> second) {
+        if (root == null) return;
+
+        if (root.getLeftNode() != null) {
+            traverse111(root.getLeftNode(), second);
+        }
+        second.add(root.getData());
+        if (root.getRightNode() != null) {
+            traverse111(root.getRightNode(), second);
+        }
+    }
+
     ///////////////////////////////////////////////////////////////////
+
     public int rootToLeaf(BinaryTreeNode<Integer> node, int val) {
         if (node == null)
             return 0;
-        val = (val*10 + node.getData());
+        val = (val * 10 + node.getData());
         if (node.getLeftNode() == null && node.getRightNode() == null)
             return val;
 
-        var left=rootToLeaf(node.getLeftNode(), val);
-        var right =  rootToLeaf(node.getRightNode(), val);
+        var left = rootToLeaf(node.getLeftNode(), val);
+        var right = rootToLeaf(node.getRightNode(), val);
 
         return left + right;
     }
+
 ///////////////////////////////////////////////////////////////////////////////////
 
     public void rootToLeaf1(BinaryTreeNode<Integer> node, String hi) {
         if (node == null)
             return;
-        hi = hi + node.getData()+ "->";
+        hi = hi + node.getData() + "->";
         if (node.getLeftNode() == null && node.getRightNode() == null) {
             System.out.println(hi);
             return;
+
         }
         rootToLeaf1(node.getLeftNode(), hi);
         rootToLeaf1(node.getRightNode(), hi);
     }
+
     //////////////////////////////////////////RETURNS TREE //////////////////////////////////////////////////////
     public void rootToLeaf11(BinaryTreeNode<Integer> node, ArrayList<Integer> list) {
         if (node == null)
-            return ;
-        list.add( node.getData());
+            return;
+        list.add(node.getData());
         if (node.getLeftNode() == null && node.getRightNode() == null) {
             System.out.println(list);
-            return ;
+            return;
         }
+
         rootToLeaf11(node.getLeftNode(), list);
-        rootToLeaf11(node.getRightNode(), list );
+        rootToLeaf11(node.getRightNode(), list);
 
     }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     static BinarySearchTree<Integer> fiTree = new BinarySearchTree<>();
 
-    public BinarySearchTree<Integer> root_to_leaf_sums(BinaryTreeNode<Integer> root){
-        if(root==null)
+    public BinarySearchTree<Integer> root_to_leaf_sums(BinaryTreeNode<Integer> root) {
+        if (root == null)
             return null;
-        root_to_leaf_sums(root,0);
+        root_to_leaf_sums(root, 0);
         return fiTree;
     }
-    private  void root_to_leaf_sums(BinaryTreeNode<Integer> root,int sum){
-        sum=sum+ root.getData();
-        if(root.getLeftNode()==null&&root.getRightNode()==null){
+    private void root_to_leaf_sums(BinaryTreeNode<Integer> root, int sum) {
+        sum = sum + root.getData();
+        if (root.getLeftNode() == null && root.getRightNode() == null) {
             fiTree.insert(sum);
             return;
         }
-        if(root.getLeftNode()!=null)
-            root_to_leaf_sums(root.getLeftNode(),sum);
-        if(root.getRightNode()!=null)
-            root_to_leaf_sums(root.getRightNode(),sum);
+        if (root.getLeftNode() != null)
+            root_to_leaf_sums(root.getLeftNode(), sum);
+        if (root.getRightNode() != null)
+            root_to_leaf_sums(root.getRightNode(), sum);
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
     public boolean isEmpty() {
@@ -506,4 +517,6 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
     public int compareTo(BinarySearchTree<T> o) {
         return Integer.compare(root.getData().compareTo(o.getRoot().getData()), 0);
     }
+
+
 }
