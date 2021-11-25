@@ -206,12 +206,11 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
 ///////////////////////////BreadthFirst /////// LEVEL ORDER ////////////
 
     public ArrayList<T> levelOrder(BinarySearchTree<T> binaryNode) {
-
         if (root == null) {
             return null;
         }
         ArrayList<T> list = new ArrayList<>();
-        Queue<BinaryTreeNode<T>> treeQueue = new LinkedList<>(); // because queue is an interface.
+        Queue<BinaryTreeNode<T>> treeQueue = new LinkedList<>(); // because queue is an interface we can't create an instance from an interface.
 //        BinaryTreeNode<T> newNode = root;
         treeQueue.add(root);
         while (!treeQueue.isEmpty()) {
@@ -436,14 +435,18 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         val = (val*10 + node.getData());
         if (node.getLeftNode() == null && node.getRightNode() == null)
             return val;
-        return rootToLeaf(node.getLeftNode(), val)
-                + rootToLeaf(node.getRightNode(), val);
+
+        var left=rootToLeaf(node.getLeftNode(), val);
+        var right =  rootToLeaf(node.getRightNode(), val);
+
+        return left + right;
     }
+///////////////////////////////////////////////////////////////////////////////////
 
     public void rootToLeaf1(BinaryTreeNode<Integer> node, String hi) {
         if (node == null)
             return;
-        hi += node.getData()+ "->";
+        hi = hi + node.getData()+ "->";
         if (node.getLeftNode() == null && node.getRightNode() == null) {
             System.out.println(hi);
             return;
@@ -452,12 +455,25 @@ public class BinarySearchTree<T extends Comparable<T>> implements Comparable<Bin
         rootToLeaf1(node.getRightNode(), hi);
     }
     //////////////////////////////////////////RETURNS TREE //////////////////////////////////////////////////////
-   static BinarySearchTree<Integer> fiTree=new BinarySearchTree<>();
+    public void rootToLeaf11(BinaryTreeNode<Integer> node, ArrayList<Integer> list) {
+        if (node == null)
+            return ;
+        list.add( node.getData());
+        if (node.getLeftNode() == null && node.getRightNode() == null) {
+            System.out.println(list);
+            return ;
+        }
+        rootToLeaf11(node.getLeftNode(), list);
+        rootToLeaf11(node.getRightNode(), list );
 
-    public BinarySearchTree<Integer> root_to_leaf_sums(BinaryTreeNode<Integer> x){
-        if(x==null)
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    static BinarySearchTree<Integer> fiTree = new BinarySearchTree<>();
+
+    public BinarySearchTree<Integer> root_to_leaf_sums(BinaryTreeNode<Integer> root){
+        if(root==null)
             return null;
-        root_to_leaf_sums(x,0);
+        root_to_leaf_sums(root,0);
         return fiTree;
     }
     private  void root_to_leaf_sums(BinaryTreeNode<Integer> root,int sum){

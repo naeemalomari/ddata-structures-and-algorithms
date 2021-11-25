@@ -66,12 +66,12 @@ public class App {
 
         BinarySearchTree<Integer> binaryBreadthTree = new BinarySearchTree<>();
         binaryBreadthTree.insert(20);
-//        binaryBreadthTree.insert(50);
+        binaryBreadthTree.insert(50);
         binaryBreadthTree.insert(40);
-//        binaryBreadthTree.insert(100);
-//        binaryBreadthTree.insert(200);
-//        binaryBreadthTree.insert(15);
-//        binaryBreadthTree.insert(12);
+        binaryBreadthTree.insert(100);
+        binaryBreadthTree.insert(200);
+        binaryBreadthTree.insert(15);
+        binaryBreadthTree.insert(12);
         binaryBreadthTree.insert(6);
         binaryBreadthTree.insert(5);
 //        binaryBreadthTree.insert(2);
@@ -81,6 +81,9 @@ public class App {
 //        binaryBreadthTree.insert(16);
 //        binaryBreadthTree.insert(66);
 //        binaryBreadthTree.insert(53);
+        ArrayList<Integer> list = new ArrayList<>();
+        binaryBreadthTree.rootToLeaf11(binaryBreadthTree.root,list);
+
 //        System.out.println(binaryBreadthTree.IncreaseOrder());
 //        System.out.println(binaryBreadthTree.maxDepth(binaryBreadthTree.root));
         BinarySearchTree<Integer> binaryBreadthTree1 = new BinarySearchTree<>();
@@ -92,7 +95,7 @@ public class App {
         binaryBreadthTree1.insert(12);
         binaryBreadthTree1.insert(16);
         binaryBreadthTree1.insert(17);
-        System.out.println(binaryBreadthTree1.root_to_leaf_sums(binaryBreadthTree1.root));
+//        System.out.println(binaryBreadthTree1.root_to_leaf_sums(binaryBreadthTree1.root));
 
 
 
